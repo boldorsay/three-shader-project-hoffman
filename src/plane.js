@@ -18,22 +18,22 @@ export function createShaderPlane() {
         vertexShader,
         fragmentShader,
         uniforms,
-        wireframe: true,
+        wireframe: false,
     })
 
     // Créer le mesh avec la géométrie calculée
     const mesh = new THREE.Mesh(
         new THREE.PlaneGeometry(
-            10,
-            10,
-            60,
-            60
+            3,
+            3,
+            300,
+            300
         ),
         mat
     )
 
     // Positionner et orienter le plane pour qu'il soit visible
-    mesh.position.set(0, 0, -8.8)
+    mesh.position.set(0, 0, 0)
     mesh.rotation.set(0, 0, 0)
 
     return mesh
@@ -41,7 +41,10 @@ export function createShaderPlane() {
 
 export function createNormalPlane() {
     // Créer un plane normal pour reprendre l'espace
-    const geometry = new THREE.PlaneGeometry(4, 4, 32, 32)
+    const geometry = new THREE.PlaneGeometry(1,
+        1,
+        300,
+        300)
     const material = new THREE.MeshNormalMaterial({
         wireframe: false,
         side: THREE.DoubleSide
