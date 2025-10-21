@@ -99,7 +99,6 @@ export function createDefaultSettings() {
         bw: 0.0,
 
         // Temps
-        timeSpeed: 1.0,
 
         // Couleurs
         color1: '#ff0000',
