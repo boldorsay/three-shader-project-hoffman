@@ -1,59 +1,78 @@
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { createShaderGUI, createDefaultSettings } from './gui.js'
-import { createShaderPlane, createNormalPlane } from './plane.js'
-import uniforms from './uniforms.js'
+import { ShaderProject } from './ShaderProject.js'
+import { P5Canvas } from './P5Canvas.js'
 
+class ProjectManager {
+    constructor() {
+        this.currentProject = null
+        this.projects = {
+            shader: null,
+            p5: null
+        }
 
-const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.001, 20)
-camera.position.set(0, 0, 5)
+        this.init()
+    }
 
-const renderer = new THREE.WebGLRenderer({
-    alpha: false,
-    antialias: false
-})
-renderer.setSize(innerWidth, innerHeight)
-document.body.appendChild(renderer.domElement)
+    init() {
+        // Récupérer les boutons
+        this.shaderBtn = document.getElementById('shader-btn')
+        this.p5Btn = document.getElementById('p5-btn')
 
-// Définir le fond noir comme dans l'exemple
-scene.background = new THREE.Color('#000')
+        // Ajouter les événements
+        this.shaderBtn.addEventListener('click', () => this.switchToProject('shader'))
+        this.p5Btn.addEventListener('click', () => this.switchToProject('p5'))
 
+        // Gérer le redimensionnement
+        window.addEventListener('resize', () => this.handleResize())
 
+        // Ne pas démarrer automatiquement - attendre que l'utilisateur clique
+        console.log('🎨 Interface prête - Cliquez sur un bouton pour commencer')
+    }
 
-// Créer le plane avec shader
-const shaderMesh = createShaderPlane()
-scene.add(shaderMesh)
+    switchToProject(projectName) {
+        // Détruire le projet actuel
+        if (this.currentProject) {
+            this.currentProject.destroy()
+            this.currentProject = null
+        }
 
-// Créer un plane normal pour reprendre l'espace
-// const normalMesh = createNormalPlane()
-// normalMesh.position.set(0, 0, 0) // Décaler pour ne pas se chevaucher
-// scene.add(normalMesh)
+        // Mettre à jour les boutons
+        this.updateButtons(projectName)
 
-// Créer les contrôles de caméra OrbitControls
-const controls = new OrbitControls(camera, renderer.domElement)
-controls.enableDamping = true
-controls.dampingFactor = 0.05
-controls.enablePan = true
-controls.enableRotate = true
-controls.autoRotate = false
+        // Créer le nouveau projet
+        switch (projectName) {
+            case 'shader':
+                this.currentProject = new ShaderProject()
+                this.projects.shader = this.currentProject
+                break
+            case 'p5':
+                this.currentProject = new P5Canvas()
+                this.projects.p5 = this.currentProject
+                break
+        }
+    }
 
-// Créer l'interface GUI
-const settings = createDefaultSettings()
-const gui = createShaderGUI(shaderMesh, settings)
+    updateButtons(activeProject) {
+        // Retirer la classe active de tous les boutons
+        this.shaderBtn.classList.remove('active')
+        this.p5Btn.classList.remove('active')
 
-window.addEventListener('mousemove', (e) => {
-    uniforms.u_mouse.value.x = e.clientX / innerWidth
-    uniforms.u_mouse.value.y = 1.0 - e.clientY / innerHeight
-})
+        // Ajouter la classe active au bouton sélectionné
+        switch (activeProject) {
+            case 'shader':
+                this.shaderBtn.classList.add('active')
+                break
+            case 'p5':
+                this.p5Btn.classList.add('active')
+                break
+        }
+    }
 
-function animate(t) {
-    uniforms.u_time.value = t * 0.001 * settings.timeSpeed
-
-    // Mettre à jour les contrôles de caméra
-    controls.update()
-
-    renderer.render(scene, camera)
-    requestAnimationFrame(animate)
+    handleResize() {
+        if (this.currentProject && this.currentProject.resize) {
+            this.currentProject.resize()
+        }
+    }
 }
-animate()
+
+// Initialiser l'application
+new ProjectManager()
