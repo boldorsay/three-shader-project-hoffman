@@ -98,9 +98,9 @@ export class P5Canvas {
     }
 
     loadImages() {
-        // Charger les 127 images
+        // Charger les 40 images
         let loadedCount = 0
-        const totalImages = 127
+        const totalImages = 40
 
         for (let i = 1; i <= totalImages; i++) {
             const img = new Image()
