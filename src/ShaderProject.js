@@ -69,7 +69,7 @@ export class ShaderProject {
             '#BC3A2C',
             '#EB8822',
             '#446332',
-            '#231F20'
+            '#40E0D0'
         ]
 
         for (let i = 0; i < listColors.length; i++) {

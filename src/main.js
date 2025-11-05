@@ -26,6 +26,9 @@ class ProjectManager {
 
         // Ne pas démarrer automatiquement - attendre que l'utilisateur clique
         console.log('🎨 Interface prête - Cliquez sur un bouton pour commencer')
+
+        this.currentProject = new P5Canvas()
+
     }
 
     switchToProject(projectName) {

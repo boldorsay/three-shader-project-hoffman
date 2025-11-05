@@ -3,70 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multi-Project Interface</title>
+    <title>ArtPulse - Professionnalisation de la restauration d'art en Afrique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background: #000;
-        font-family: Arial, sans-serif;
-      }
-      
-      #controls {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-        display: flex;
-        gap: 10px;
-      }
-      
-      .btn {
-        padding: 12px 24px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: white;
-        cursor: pointer;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-      }
-      
-      .btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.5);
-        transform: translateY(-2px);
-      }
-      
-      .btn.active {
-        background: rgba(255, 255, 255, 0.3);
-        border-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-      }
-      
-      canvas {
-        display: block;
-      }
-      
-      #p5-container {
-        display: none;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/artpulse.css">
   </head>
   <body>
-    <div id="controls">
-      <button class="btn" id="shader-btn">Shader</button>
-      <button class="btn" id="p5-btn">P5 Canvas</button>
-    </div>
+    <!-- Header avec shader -->
+    <header class="header" id="header-shader">
+      <div class="header-content">
+        <h1 class="logo"><span class="logo-art">Art</span><span class="logo-pulse">Pulse</span></h1>
+      </div>
+    </header>
+
+    <!-- Section Intro -->
+    <section class="intro">
+      <div class="grid-container">
+        <div class="intro-content">
+          <h2 class="intro-title">Accompagner la professionnalisation de la conservation-restauration d'art en Afrique</h2>
+          <div class="intro-text">
+            <p>La profession de conservateur-restaurateur reste encore peu développée en Afrique, où rares sont les institutions proposant une formation spécialisée dans ce domaine pourtant essentiel. Alors que les artistes africains gagnent en reconnaissance internationale, la conservation, la restauration et la valorisation de leurs œuvres deviennent des enjeux majeurs, à la fois patrimoniaux, politiques et symboliques.</p>
+            <p>Face à ce constat, notre projet de formation en conservation-restauration entend répondre concrètement aux besoins du terrain. Il vise à sensibiliser et former une nouvelle génération d'acteurs culturels africains à ces savoir-faire, en alliant rigueur scientifique, pratique professionnelle et transmission engagée.</p>
+            <p><strong>Nos objectifs :</strong></p>
+            <ul>
+              <li>former et accompagner les professionnels de la conservation-restauration d'art</li>
+              <li>soutenir la préservation de la création contemporaine, des savoir-faire artisanaux et du patrimoine culturel et artistique africain</li>
+              <li>favoriser les échanges et la transmission de compétences à l'échelle locale et internationale.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="intro-btn"> <button class="support-btn">Nous soutenir</button></div>
+      </div>
+    </section>
+
+    <!-- Section Projects -->
+    <section class="projects">
+      <div class="grid-container">
+        <h2 class="section-title">Projects</h2>
+        <p class="projects-intro">En novembre 2024, dans le cadre de la 15e édition de la Biennale de Dakar et en partenariat avec la Direction du Patrimoine Culturel du Ministère de la Culture du Sénégal, nous avons organisé</p>
+        
+        <!-- Barre de progression avec dates -->
+        <div class="timeline-progress">
+          <div class="timeline-bar" id="timeline-bar"></div>
+          <div class="timeline-dates">
+            <button class="timeline-date active" data-index="0">Mai 2024</button>
+            <button class="timeline-date" data-index="1">Novembre 2024</button>
+            <button class="timeline-date" data-index="2">Mai 2025</button>
+            <button class="timeline-date" data-index="3">Novembre 2025</button>
+            <button class="timeline-date" data-index="4">Mai 2026</button>
+          </div>
+        </div>
+
+        <!-- Carrousel -->
+        <div class="carousel">
+          <div class="carousel-images">
+            <div class="image-slider-container" id="slider-container-1">
+              <div class="image-slider-track" id="image-slider-track-1">
+                <!-- Les images seront ajoutées dynamiquement -->
+              </div>
+            </div>
+            <div class="image-slider-container" id="slider-container-2">
+              <div class="image-slider-track" id="image-slider-track-2">
+                <!-- Les images seront ajoutées dynamiquement -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-content">
+            <h3 class="carousel-title" id="carousel-title">Sénégal - Patrimoine Culturel</h3>
+            <div class="carousel-text" id="carousel-text">
+              <p>Un seminar sur les approches théoriques et pratiques de la conservation et de la préservation des œuvres d'art, tenu au sein de la Direction du Patrimoine Culture. Ce programme de formation s'est déroulé sur une semaine, combinant théorie et pratique, et a réuni des responsables, conservateurs et techniciens de diverses institutions de Dakar et d'autres régions du Sénégal.</p>
+              <p>Un atelier sur les techniques artistiques, auquel ont participé une quarantaine d'artistes venus de Dakar, du Sénégal ou d'autres pays africains.</p>
+              <p>Un Talk consacré aux enjeux de la conservation et de la préservation de l'art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale tel que <span class="color-accent">Oumar Badiane</span>, <span class="color-accent-2">Anne-Marie</span>.</p>
+            </div>
+            <!-- Flèches de navigation sous le texte -->
+            <div class="carousel-nav">
+              <button class="carousel-arrow prev" id="carousel-prev">←</button>
+              <button class="carousel-arrow next" id="carousel-next">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section class="team">
+      <div class="grid-container">
+        <h2 class="section-title">ÉQUIPE</h2>
+        <div class="team-content">
+          <div class="team-text">
+            <h3 class="team-subtitle" id="team-subtitle">Andrea Hoffmann Dobrynski – Présidente</h3>
+            <div class="team-bio" id="team-bio">
+              <p>Titulaire d'un Master en Histoire de l'art de l'Université de Genève, Andrea Hoffmann Dobrynski débute sa carrière chez Sotheby's à Genève avant de se spécialiser dans la conservation-restauration de tableaux. Forte de plus de 30 ans d'expérience, elle est la fondatrice et directrice de l'atelier Hoffmann Art Management. Elle participe également à des projets de protection et de sauvegarde du patrimoine, notamment dans le cadre de la rénovation du Palais des Nations de l'ONU à Genève.</p>
+            </div>
+            <a href="mailto:andrea@artpulse.africa" class="team-mail">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="team-mail-arrow">
+                <path d="M13.1663 6.54167L19.583 12.9583L13.1663 19.375" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.75 12.75H1.25V1.25" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>mail</span>
     
-    <div id="p5-container"></div>
-    
-    <script type="module" src="/src/main.js"></script>
+            </a>
+            <div class="team-thumbnails">
+              <button class="team-thumbnail active" data-index="0">
+                <img src="/Equpie/Screenshot 2025-10-01 at 17.03.37.png" alt="Andrea Hoffmann Dobrynski">
+              </button>
+              <button class="team-thumbnail" data-index="1">
+                <img src="/Equpie/Screenshot 2025-10-01 at 17.03.41.png" alt="Elisabeth Assal-Bouchardy">
+              </button>
+              <button class="team-thumbnail" data-index="2">
+                <img src="/Equpie/Screenshot 2025-10-01 at 17.03.48.png" alt="Dominique de Saint Pierre">
+              </button>
+            </div>
+          </div>
+          <div class="team-image">
+            <img src="/Equpie/Screenshot 2025-10-01 at 17.03.37.png" alt="Andrea Hoffmann Dobrynski" id="team-main-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comité de soutien -->
+    <section class="support-committee">
+      <div class="grid-container">
+        <h2 class="section-title">Comité de soutien</h2>
+        <div class="committee-grid">
+          <div class="committee-member">
+            <h4 class="member-name">Fatima Fall</h4>
+            <p class="member-title">Experte en conservation préventive, ancienne directrice du Centre de Recherche et de Documentation du Sénégal (CRDS), à Saint Louis, conservatrice au Musée d'art contemporain de Cotonou (MACC), au Bénin</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Charlotte Diez-Bento</h4>
+            <p class="member-title">Fondatrice de This is your Heart, agence de Conseil en Art & Diplomatie Culturelle, à Genève</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Oumar Badiane</h4>
+            <p class="member-title">Directeur du Patrimoine Culturel du Ministère de la Culture du Sénégal</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Idrissa Diallo</h4>
+            <p class="member-title">Commissaire d'exposition, reconnu de l'écosystème des arts visuels au Sénégal</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Anne-Marie Faye</h4>
+            <p class="member-title">Experte en gestion muséale et culturelle, directrice de la Galerie Nationale, à Dakar</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Jean-Yves Marin</h4>
+            <p class="member-title">Archéologue, ancien directeur du Musée d'Art et d'Histoire, à Genève, ancien professeur associé de l'Université Senghor, Alexandrie</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Ousseynou Wade</h4>
+            <p class="member-title">Ancien Secrétaire général de la Biennale de Dakar et expert en art contemporain d'Afrique</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Manel Ndoye</h4>
+            <p class="member-title">Artiste sénégalais, lauréat du Prix du Maire de la Ville de Dakar, 15 e édition de la Biennale de Dakar, 2024</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Christophe Person</h4>
+            <p class="member-title">Directeur de la galerie Christophe Person, à Paris et Bruxelles, ancien responsable du département d'art contemporain africain chez Piasa et Artcurial</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Sylvain Sankalé</h4>
+            <p class="member-title">Avocat au Barreau du Sénégal et de Paris, enseignant à l'Institut supérieur des arts et des cultures (ISAC), à Dakar, critique d'art et collectionneur</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Momar Seck</h4>
+            <p class="member-title">Artiste sénégalo-suisse, enseignant et chef du département des Arts et Design à l'Ecole Internationale, Genève</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Barthélémy Toguo</h4>
+            <p class="member-title">Artiste franco-camerounais, fondateur et directeur de Bandjoun Station, au Cameroun</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">Thierry Fouomene</h4>
+            <p class="member-title">Cinéaste, médiateur et conseil auprès du centre d'art contemporain Bandjoun Station, au Cameroun</p>
+          </div>
+          <div class="committee-member">
+            <h4 class="member-name">David Hazoumé</h4>
+            <p class="member-title">Entrepreneur et collectionneur d'art, neveu de Romuald Hazoumé, artiste béninois</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Canvas P5 -->
+    <section class="p5-section">
+      <div class="p5-container" id="p5-container"></div>
+      <div class="grid-container p5-content">
+        <h2 class="p5-logo">ArtPulse</h2>
+        <div class="p5-text-columns">
+          <div class="p5-column">
+            <p>Alors que l'art contemporain africain gagne en visibilité sur la scène internationale et que de nouveaux musées émergent sur le continent, la question de la préservation des œuvres devient cruciale. Le manque de formation spécialisée et la diversité des matériaux utilisés par les artistes rendent la conservation complexe mais essentielle.</p>
+          </div>
+          <div class="p5-column">
+            <p>ArtPulse Africa œuvre à sensibiliser les artistes, artisans et acteurs culturels aux enjeux de la conservation et de la transmission du patrimoine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <div class="grid-container">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <h3 class="contact-heading">Adresse</h3>
+            <p>4ter route des Jeunes<br>CH-1227 Genève</p>
+          </div>
+          <div class="contact-item">
+            <h3 class="contact-heading">Mail</h3>
+            <p>PulseAfrica@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <h3 class="contact-heading">Téléphone</h3>
+            <p>0798488195</p>
+          </div>
+          <div class="contact-item">
+            <h3 class="contact-heading">Réseaux sociaux</h3>
+            <p>Facebook<br>Youtube</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/artpulse.js"></script>
   </body>
 </html>

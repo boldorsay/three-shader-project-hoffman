@@ -98,16 +98,16 @@ void main() {
 
     vec3 pos = vec3(position.x, position.y, position.z + noise * 0.5  + tilt + incline  +  offset);
 
-    vColor = u_palette[2];
+    vColor = u_palette[1];
 
 
     for(int i = 0; i < 5; i++) {
 
 
       float noiseFlow = 5. + float(i) * 0.3;
-      float noiseSpeed = 2. + float(i) * 0.3 ;
+      float noiseSpeed = 2. + float(i) * 0.2 ;
 
-      float noiseSeed = 1. + float(i)*10.;
+      float noiseSeed = 2. + float(i)*10.;
       vec2 noiseFreq = vec2(0.3,0.4);
 
       float noiseFloor = 0.1; 

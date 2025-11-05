@@ -9,7 +9,7 @@ export class P5Canvas {
         this.steps = 0
         this.mouseX = 0
         this.mouseY = 0
-        this.imageSize = 80 // Beaucoup plus petites
+        this.imageSize = 260 // Taille de base des images (peut être modifiée via GUI)
         this.visibleImages = []
         this.animationId = null
         this.lastMouseMove = Date.now()
@@ -30,7 +30,6 @@ export class P5Canvas {
         this.createStyles()
 
         // Ajouter le titre "Pulse Art"
-        this.createTitle()
 
         // Charger toutes les images
         this.loadImages()
@@ -93,7 +92,7 @@ export class P5Canvas {
     createTitle() {
         const title = document.createElement('div')
         title.className = 'pulse-art-title'
-        title.textContent = 'Pulse Art'
+        title.textContent = 'ArtPulse'
         this.container.appendChild(title)
     }
 
@@ -144,13 +143,13 @@ export class P5Canvas {
 
         this.steps += Math.abs(movementX) + Math.abs(movementY)
 
-        if (this.steps >= this.currentIndex * 30 && this.loadedImages.length > 0) {
+        if (this.steps >= this.currentIndex * 220 && this.loadedImages.length > 0) {
             this.addImage(clientX, clientY)
         }
 
         if (this.currentIndex >= this.loadedImages.length) {
             this.currentIndex = 0
-            this.steps = -30
+            this.steps = -120
         }
     }
 
@@ -169,7 +168,7 @@ export class P5Canvas {
             height: imageData.height,
             startTime: now,
             fadeStartTime: now + 100, // Commencer le fade après 3 secondes
-            fadeDuration: 1500, // Fade sur 3 secondes
+            fadeDuration: 3500, // Fade sur 3 secondes
             isVisible: true
         }
 
@@ -246,5 +245,27 @@ export class P5Canvas {
 
     resize() {
         this.handleResize()
+    }
+
+    // Méthode pour modifier la taille des images
+    setImageSize(newSize) {
+        this.imageSize = newSize
+
+        // Recalculer les dimensions de toutes les images chargées
+        this.loadedImages.forEach(imageData => {
+            imageData.width = this.calculateImageWidth(imageData.image)
+            imageData.height = this.calculateImageHeight(imageData.image)
+        })
+
+        // Recalculer les dimensions des images visibles
+        this.visibleImages.forEach(imageObject => {
+            imageObject.width = this.calculateImageWidth(imageObject.image)
+            imageObject.height = this.calculateImageHeight(imageObject.image)
+        })
+    }
+
+    // Méthode pour obtenir la taille actuelle des images
+    getImageSize() {
+        return this.imageSize
     }
 }
