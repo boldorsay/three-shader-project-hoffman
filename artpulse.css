@@ -15,20 +15,20 @@
     /* Styles de texte - Titre */
     --font-titre-family: 'Inter', sans-serif;
     --font-titre-weight: 500;
-    --font-titre-size: 60px;
-    --font-titre-line-height: 60px;
+    --font-titre-size: 48px;
+    --font-titre-line-height: 50px;
     --font-titre-letter-spacing: 0;
 
     /* Styles de texte - Content */
     --font-content-family: 'Inter', sans-serif;
     --font-content-weight: 500;
-    --font-content-size: 18px;
+    --font-content-size: 14px;
     --font-content-letter-spacing: 0;
 
     /* Styles de texte - Sous-titre */
     --font-sous-titre-family: 'Inter', sans-serif;
     --font-sous-titre-weight: 700;
-    --font-sous-titre-size: 36px;
+    --font-sous-titre-size: 28px;
     --font-sous-titre-letter-spacing: 0;
 
 
@@ -127,8 +127,8 @@ html {
 .header {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 700px;
+    height: 75vh;
+    min-height: 600px;
     overflow: hidden;
     background: var(--bg-color);
 }
@@ -469,6 +469,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Curseurs personnalisés pour le slider */
@@ -496,9 +497,7 @@ html {
     letter-spacing: var(--font-content-letter-spacing);
     line-height: 1.6;
     min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
 }
 
 .carousel-text p {
