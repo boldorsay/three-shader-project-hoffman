@@ -8,38 +8,73 @@ import { createLights, createAmbientLight } from './src/light.js'
 const carouselData = [
     {
         title: 'Mai 2024',
-        text: `<p>Contenu à venir...</p>`,
-        images: ['/imgP5/IMG_001.jpg', '/imgP5/IMG_002.jpg', '/imgP5/IMG_003.jpg'],
+        text: `<p>Tout a commencé en mai 2024 avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.</p>`,
+        images: [
+            '/img-project/Mai 2024.JPG',
+            '/img-project/Direction Patrimoine National_Mai 2024.JPG',
+            '/img-project/Mai 2024_Séminaire Direction Patrimoine culturel.JPG',
+            '/img-project/Ecole Nationale Arts_Mai 2024.jpg'
+        ],
         date: 'Mai 2024'
     },
     {
-        title: 'Sénégal - Novembre 2024',
-        text: `<p>En novembre 2024, dans le cadre de la 15e édition de la Biennale de Dakar et en partenariat avec la Direction du Patrimoine Culturel du Ministère de la Culture du Sénégal, nous avons organisé :</p>
-        <p>Un séminaire sur les approches théoriques et pratiques de la conservation et de la préservation des œuvres d'art, tenu au sein de la Direction du Patrimoine Culture. Ce programme de formation s'est déroulé sur une semaine, combinant théorie et pratique, et a réuni des responsables, conservateurs et techniciens de diverses institutions de Dakar et d'autres régions du Sénégal.</p>
-        <p>Un atelier sur les techniques artistiques, auquel ont participé une quarantaine d'artistes venus de Dakar, du Sénégal ou d'autres pays africains.</p>
-        <p>Un Talk consacré aux enjeux de la conservation et de la préservation de l'art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</p>`,
-        images: ['/imgP5/IMG_004.jpg', '/imgP5/IMG_005.jpg', '/imgP5/IMG_006.jpg', '/imgP5/IMG_007.jpg'],
+        title: 'Novembre 2024',
+        text: `<p>Dans le cadre de la 15e édition de la Biennale de Dakar et en partenariat avec la Direction du Patrimoine Culturel du Ministère de la Culture du Sénégal, nous avons organisé :</p>
+        <ul>
+            <li><span class="color-turquoise">un séminaire sur les approches théoriques et pratiques de la conservation et de la préservation des œuvres d’art</span>, tenu au sein de la Direction du Patrimoine Culture. Ce programme de formation d’une semaine, combinant théorie et pratique, a réuni des responsables, conservateurs et techniciens de diverses institutions de Dakar et d’autres régions du Sénégal ;</li>
+            <li>un atelier sur les techniques artistiques, auquel ont participé une quarantaine d’artistes venus de Dakar, du Sénégal ou d’autres pays africains ;</li>
+            <li>un talk consacré aux enjeux de la conservation et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
+        </ul>`,
+        images: [
+            '/img-project/Atelier Nov 2024.JPG',
+            '/img-project/Atelier techniques artistiques_Nov 2024.JPG',
+            '/img-project/Atelier techniques artistiques_Nov 2024_1.JPG',
+            '/img-project/Atelier techniques artistiques_ Nov 2024_2.JPG'
+        ],
         date: 'Novembre 2024'
     },
     {
-        title: 'Sénégal - Mai 2025',
-        text: `<p>En mai 2025, nous avons été invités pour donner :</p>
-        <p>Un cours de sensibilisation sur les techniques artistiques à l'Ecole Nationale des Arts et Métiers de la Culture à Dakar.</p>`,
-        images: ['/imgP5/IMG_008.jpg', '/imgP5/IMG_009.jpg', '/imgP5/IMG_010.jpg'],
+        title: 'Mai 2025',
+        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
+        <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
+        images: [
+            '/img-project/Ecole Nationale Arts_Mai 2025_1.JPG',
+            '/img-project/Ecole Nationale Arts_Mai 2025_2.JPG',
+            '/img-project/Ecole Nationale Arts_Mai 2025_3.JPG',
+            '/img-project/Ecole Nationale Arts_mai 2025.jpg'
+        ],
         date: 'Mai 2025'
     },
     {
-        title: 'Bénin - Novembre 2025',
-        text: `<p>En novembre 2025, nous avons été invités dans le cadre du festival artistique des Rencontres Contemporaines de Cotonou et de son programme scientifique pour diriger :</p>
-        <p>Une Master Class traitant différentes thématiques autour des métiers d'art et des techniques artistiques à laquelle ont participé une vingtaine d'artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
-        images: ['/imgP5/IMG_011.jpg', '/imgP5/IMG_012.jpg', '/imgP5/IMG_013.jpg'],
+        title: 'Novembre 2025',
+        text: `<p>En préparation.</p>`,
+        images: [
+            '/img-project/Benin_Mai 2025_1.JPG',
+            '/img-project/Benin_Mai 2025_2.jpg',
+            '/img-project/Benin_Mai 2025_3.jpg',
+            '/img-project/Benin_Mai 2025_4.jpg',
+            '/img-project/Benin_Mai 2025_5.jpg',
+            '/img-project/Benin_Mai 2025_6.JPG',
+            '/img-project/Masterclass Benin_Mai 2025.JPG',
+            '/img-project/Benin_Masterclass_Mai 2025.jpg'
+        ],
         date: 'Novembre 2025'
     },
     {
-        title: 'Mai 2026',
-        text: `<p>Contenu à venir...</p>`,
-        images: ['/imgP5/IMG_014.jpg', '/imgP5/IMG_015.jpg'],
-        date: 'Mai 2026'
+        title: 'Notre projet',
+        text: `<p>Un projet à la mémoire de Koyo Kouoh.</p>
+        <p>Notre objectif est de concevoir et mettre en œuvre un programme de <span class="color-turquoise">formation en conservation-restauration d’œuvres d’art</span> et de valorisation du patrimoine national africain. Ce programme formera des conservateurs et des techniciens spécialisés en gestion du patrimoine artistique et culturel, à travers une approche mêlant enseignements théoriques et pratiques, conçue en réponse aux réalités du terrain.</p>
+        <p>Les objectifs pour 2026 :</p>
+        <ul>
+            <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar ;</li>
+            <li>initier les protagonistes du secteur culturel et artistique du Sénégal et d’autres pays d’Afrique à la formation en conservation-restauration lors de deux semaines de cours intensifs à Dakar et Saint-Louis ;</li>
+            <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
+        </ul>`,
+        images: [
+            '/img-project/Ecole Nationale Arts_mai 2025.jpg',
+            '/img-project/Benin_Masterclass_Mai 2025.jpg'
+        ],
+        date: 'Futur'
     }
 ]
 
@@ -50,14 +85,16 @@ const teamData = [
         bio: `<p>Titulaire d'un Master en Histoire de l'art de l'Université de Genève, Andrea Hoffmann Dobrynski débute sa carrière chez Sotheby's à Genève avant de se spécialiser dans la conservation-restauration de tableaux. Forte de plus de 30 ans d'expérience, elle est la fondatrice et directrice de l'atelier Hoffmann Art Management, où elle met sa passion et son expertise au service de ses clients. Elle participe également à des projets de protection et de sauvegarde du patrimoine, notamment dans le cadre de la rénovation du Palais des Nations de l'ONU à Genève.</p>
         <p>Membre active de la MAG (Association des Métiers d'Art Genève), elle préside la SAMAH (Société des Amis du Musée d'Art et d'Histoire de Genève) de 2018 à 2022. Depuis 2021, elle enseigne l'art de la restauration à la Haute Ecole de Gestion de Genève.</p>
         <p>Sa passion pour l'art africain l'a conduite à restaurer de nombreuses œuvres d'artistes africains établis et émergents, et elle est la restauratrice attitrée d'une des plus grandes collections privées d'art africain contemporain. En 2024, elle fonde ArtPulse Africa.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.37.png'
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.37.png',
+        imagePosition: 'center center'
     },
     {
         subtitle: 'Elisabeth Assal-Bouchardy – Vice-présidente',
         bio: `<p>Diplômée d'un Master en Relations internationales de l'IUHEI de Genève, Elisabeth Assal-Bouchardy commence sa carrière au Comité International de la Croix-Rouge, où elle travaille pendant sept ans, à Genève et à l'étranger. Elle poursuit ensuite sa carrière dans le secteur des institutions d'aide sociale avant de fonder sa propre société de conseils, Human Capital Partners, spécialisée dans la protection de la personnalité au travail.</p>
         <p>En 2015, elle crée la Green Flower Foundation, une organisation dédiée au développement durable. Elle initie deux projets en Ethiopie : la création d'un programme de formation en maraîchage biologique et un soutien technique aux jeunes maraîchers se lançant dans cette activité.</p>
         <p>Fille de parents artistes peintres, Elisabeth Assal-Bouchardy nourrit depuis toujours un intérêt profond pour l'art, en particulier pour les métiers d'art, et participe activement au processus créatif.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.41.png'
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.41.png',
+        imagePosition: 'center center'
     },
     {
         subtitle: 'Dominique de Saint Pierre – Trésorière',
@@ -67,7 +104,8 @@ const teamData = [
         <p>Aujourd'hui, elle siège depuis plusieurs années au conseil d'administration du groupe Procimmo, un acteur majeur de la gestion de fonds immobiliers en Suisse.</p>
         <p>Elle occupe également le poste de trésorière de la Société des Amis du Musée d'art et d'histoire (MAH), a présidé le comité de la Fondation Otium (soutien aux personnes atteintes de cancer) et s'implique activement dans plusieurs autres organisations caritatives.</p>
         <p>Animée depuis toujours par une passion pour l'art, elle est aussi une collectionneuse invétérée.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.48.png'
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.48.png',
+        imagePosition: 'calc(50% -160px) center'
     }
 ]
 
@@ -93,8 +131,8 @@ class HeaderShader {
 
         this.scene = new THREE.Scene()
 
-        this.camera = new THREE.PerspectiveCamera(60, width / height, 0.001, 20)
-        this.camera.position.set(-0.158, -0.102, 0.930)
+        this.camera = new THREE.PerspectiveCamera(60, width / height, 0.001, 20);
+        this.camera.position.set(-0.158, -0.102, 0.700)
 
         this.renderer = new THREE.WebGLRenderer({
             alpha: false,
@@ -222,7 +260,7 @@ class P5CanvasSection {
         this.canvas = document.createElement('canvas')
         const sectionRect = this.container.closest('.p5-section').getBoundingClientRect()
         const width = sectionRect.width || window.innerWidth
-        const height = (sectionRect.height || window.innerHeight) * 0.8 // 80% de la hauteur
+        const height = sectionRect.height || window.innerHeight
         this.canvas.width = width
         this.canvas.height = height
         this.canvas.style.cursor = 'none'
@@ -384,14 +422,14 @@ class P5CanvasSection {
         const columnWidth = (canvasWidth - 2 * gridMargin - (totalColumns - 1) * gridGutter) / totalColumns
 
         // Calculer les positions pour le texte (4 colonnes centrées, colonnes 3 à 7)
-        const textStartCol = 3 // Colonne 3 (0-indexed serait 2, mais on compte de 1 à 8)
-        const textWidth = 4 * columnWidth + 3 * gridGutter // 4 colonnes + 3 gutters
-        const textX = gridMargin + (textStartCol - 1) * (columnWidth + gridGutter)
+        const textWidth = columnWidth * 4 + gridGutter * 3
+        const textX = (canvasWidth - textWidth) / 2
 
         // Position verticale du texte (centré verticalement dans la section visible)
-        const paddingTop = 120
-        const logoY = paddingTop + 60
-        const textY = logoY + 120 // Espacement après le logo
+        const spacingBetweenLogoAndText = 80
+        const textColumnWidth = textWidth
+        const lineHeight = 25 * 1.6 // font-size * line-height
+        const text1 = "Préserver le patrimoine est le plus beau cadeau qu’on puisse faire aux générations"
 
         // Dessiner le logo "ArtPulse" centré avec "Art" en bold et "Pulse" en regular
         this.ctx.save()
@@ -399,7 +437,9 @@ class P5CanvasSection {
         this.ctx.textAlign = 'left'
 
         // Taille de police plus grosse
-        const logoFontSize = '7rem'
+        const logoFontSize = '8rem'
+        const baseFontSize = 16 // 1rem = 16px
+        const logoFontPx = parseFloat(logoFontSize) * baseFontSize
 
         // Mesurer "Art" en bold
         this.ctx.font = `700 ${logoFontSize} "Expletus Sans", sans-serif`
@@ -416,6 +456,14 @@ class P5CanvasSection {
         // Calculer la position pour centrer le texte complet
         const totalWidth = artWidth + pulseWidth
         const startX = canvasWidth / 2 - totalWidth / 2
+
+        // Calculer la hauteur du bloc (logo + espace + texte)
+        const text1Lines = Math.ceil(this.estimateTextLines(text1, textColumnWidth))
+        const estimatedHeight = text1Lines * lineHeight
+        const totalBlockHeight = logoFontPx + spacingBetweenLogoAndText + estimatedHeight
+        const blockStartY = Math.max((canvasHeight - totalBlockHeight) / 2, 0)
+        const logoY = blockStartY
+        const textY = logoY + logoFontPx + spacingBetweenLogoAndText
 
         // Créer un gradient linéaire horizontal du turquoise au rouge
         const gradient = this.ctx.createLinearGradient(startX, logoY, startX + totalWidth, logoY)
@@ -441,38 +489,14 @@ class P5CanvasSection {
         this.ctx.textAlign = 'left'
         this.ctx.textBaseline = 'top'
 
-        // Largeur d'une colonne de texte (2 colonnes sur 4)
-        const textColumnWidth = 2 * columnWidth + gridGutter
-        const lineHeight = 25 * 1.6 // font-size * line-height
-
-        // Estimer la hauteur totale du texte pour créer le gradient vertical
-        // On va calculer la hauteur approximative en fonction du nombre de mots
-        const text1 = "Alors que l'art contemporain africain gagne en visibilité sur la scène internationale et que de nouveaux musées émergent sur le continent, la question de la préservation des œuvres devient cruciale. Le manque de formation spécialisée et la diversité des matériaux utilisés par les artistes rendent la conservation complexe mais essentielle."
-        const text2 = "ArtPulse Africa œuvre à sensibiliser les artistes, artisans et acteurs culturels aux enjeux de la conservation et de la transmission du patrimoine."
-
-        // Calculer la hauteur approximative du texte
-        const text1Lines = Math.ceil(this.estimateTextLines(text1, textColumnWidth))
-        const text2Lines = Math.ceil(this.estimateTextLines(text2, textColumnWidth))
-        const maxLines = Math.max(text1Lines, text2Lines)
-        const estimatedHeight = maxLines * lineHeight
-
         // Créer un gradient vertical pour chaque colonne (du turquoise en haut au rouge en bas)
         const gradient1 = this.ctx.createLinearGradient(textX, textY, textX, textY + estimatedHeight)
         gradient1.addColorStop(0, '#02CDA8') // Turquoise en haut
         gradient1.addColorStop(1, '#AE3407') // Rouge en bas
 
-        const text2X = textX + textColumnWidth + gridGutter
-        const gradient2 = this.ctx.createLinearGradient(text2X, textY, text2X, textY + estimatedHeight)
-        gradient2.addColorStop(0, '#02CDA8') // Turquoise en haut
-        gradient2.addColorStop(1, '#AE3407') // Rouge en bas
-
         // Dessiner la première colonne avec gradient
         this.ctx.fillStyle = gradient1
         this.wrapText(this.ctx, text1, textX, textY, textColumnWidth, lineHeight)
-
-        // Dessiner la deuxième colonne avec gradient
-        this.ctx.fillStyle = gradient2
-        this.wrapText(this.ctx, text2, text2X, textY, textColumnWidth, lineHeight)
 
         this.ctx.restore()
     }
@@ -525,7 +549,7 @@ class P5CanvasSection {
         if (this.canvas && this.container) {
             const sectionRect = this.container.closest('.p5-section').getBoundingClientRect()
             const width = sectionRect.width || window.innerWidth
-            const height = (sectionRect.height || window.innerHeight) * 0.8 // 80% de la hauteur
+            const height = sectionRect.height || window.innerHeight
             this.canvas.width = width
             this.canvas.height = height
         }
@@ -549,31 +573,28 @@ class ImageSlider {
         this.container = containerElement
         this.currentSlideIndex = 0
         this.currentProjectImages = []
+        this.slides = []
+        this.onResize = this.handleResize.bind(this)
         this.init()
     }
 
     init() {
         if (!this.container) return
 
-        // Gérer le mouvement de la souris pour changer le curseur
         this.container.addEventListener('mousemove', (e) => {
             const rect = this.container.getBoundingClientRect()
             const mouseX = e.clientX - rect.left
             const percentage = (mouseX / rect.width) * 100
 
-            // Retirer les classes précédentes
             this.container.classList.remove('cursor-left', 'cursor-right')
 
-            // Si la souris est à gauche de 50%, curseur gauche
             if (percentage < 50) {
                 this.container.classList.add('cursor-left')
             } else {
-                // Si la souris est à droite de 50%, curseur droite
                 this.container.classList.add('cursor-right')
             }
         })
 
-        // Gérer le clic pour naviguer
         this.container.addEventListener('click', (e) => {
             const rect = this.container.getBoundingClientRect()
             const mouseX = e.clientX - rect.left
@@ -586,10 +607,11 @@ class ImageSlider {
             }
         })
 
-        // Retirer le curseur personnalisé quand la souris quitte
         this.container.addEventListener('mouseleave', () => {
             this.container.classList.remove('cursor-left', 'cursor-right')
         })
+
+        window.addEventListener('resize', this.onResize)
     }
 
     setImages(images) {
@@ -612,7 +634,9 @@ class ImageSlider {
             this.track.appendChild(slide)
         })
 
-        this.updatePosition()
+        this.slides = Array.from(this.track.children)
+        this.updateSlideWidths()
+        this.updatePosition(true)
     }
 
     previous() {
@@ -627,20 +651,42 @@ class ImageSlider {
         this.updatePosition()
     }
 
-    updatePosition() {
-        if (this.track) {
-            const translateX = -this.currentSlideIndex * 100
-            this.track.style.transform = `translateX(${translateX}%)`
+    updatePosition(disableTransition = false) {
+        if (!this.track || !this.container) return
+        const offset = -this.currentSlideIndex * this.container.offsetWidth
+
+        if (disableTransition) {
+            const previousTransition = this.track.style.transition
+            this.track.style.transition = 'none'
+            this.track.style.transform = `translate3d(${offset}px, 0, 0)`
+            requestAnimationFrame(() => {
+                this.track.style.transition = previousTransition || ''
+            })
+        } else {
+            this.track.style.transform = `translate3d(${offset}px, 0, 0)`
         }
+    }
+
+    updateSlideWidths() {
+        if (!this.slides || this.slides.length === 0 || !this.container) return
+        const width = this.container.offsetWidth
+        this.slides.forEach((slide) => {
+            slide.style.width = `${width}px`
+            slide.style.flex = '0 0 auto'
+        })
+    }
+
+    handleResize() {
+        this.updateSlideWidths()
+        this.updatePosition(true)
     }
 }
 
 // Gestionnaire du carrousel
 class CarouselManager {
-    constructor(imageSlider1, imageSlider2) {
+    constructor(imageSlider) {
         this.currentIndex = 0
-        this.imageSlider1 = imageSlider1
-        this.imageSlider2 = imageSlider2
+        this.imageSlider = imageSlider
         this.init()
     }
 
@@ -690,18 +736,10 @@ class CarouselManager {
         if (titleEl) titleEl.textContent = data.title
         if (textEl) textEl.innerHTML = data.text
 
-        // Mettre à jour les sliders d'images (diviser en deux groupes)
+        // Mettre à jour le slider d'images
         if (data.images && data.images.length > 0) {
-            // Diviser les images en deux groupes
-            const midPoint = Math.ceil(data.images.length / 2)
-            const images1 = data.images.slice(0, midPoint)
-            const images2 = data.images.slice(midPoint)
-
-            if (this.imageSlider1 && images1.length > 0) {
-                this.imageSlider1.setImages(images1)
-            }
-            if (this.imageSlider2 && images2.length > 0) {
-                this.imageSlider2.setImages(images2)
+            if (this.imageSlider) {
+                this.imageSlider.setImages(data.images)
             }
         }
 
@@ -755,6 +793,9 @@ class TeamManager {
         thumbnails.forEach((thumb, index) => {
             thumb.addEventListener('click', () => this.switchTo(index))
         })
+
+        // Mettre à jour l'affichage initial selon les données
+        this.switchTo(this.currentIndex)
     }
 
     switchTo(index) {
@@ -767,7 +808,14 @@ class TeamManager {
 
         if (subtitleEl) subtitleEl.textContent = data.subtitle
         if (bioEl) bioEl.innerHTML = data.bio
-        if (imageEl) imageEl.src = data.image
+        if (imageEl) {
+            imageEl.src = data.image
+            if (data.imagePosition) {
+                imageEl.style.objectPosition = data.imagePosition
+            } else {
+                imageEl.style.objectPosition = 'center center'
+            }
+        }
 
         thumbnails.forEach((thumb, i) => {
             thumb.classList.toggle('active', i === index)
@@ -790,16 +838,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialiser les deux sliders d'images
-    const sliderTrack1 = document.getElementById('image-slider-track-1')
-    const sliderContainer1 = document.getElementById('slider-container-1')
-    const sliderTrack2 = document.getElementById('image-slider-track-2')
-    const sliderContainer2 = document.getElementById('slider-container-2')
+    const sliderTrack = document.getElementById('image-slider-track')
+    const sliderContainer = document.getElementById('slider-container')
 
-    const imageSlider1 = (sliderTrack1 && sliderContainer1) ? new ImageSlider(sliderTrack1, sliderContainer1) : null
-    const imageSlider2 = (sliderTrack2 && sliderContainer2) ? new ImageSlider(sliderTrack2, sliderContainer2) : null
+    const imageSlider = (sliderTrack && sliderContainer) ? new ImageSlider(sliderTrack, sliderContainer) : null
 
     // Initialiser le carrousel
-    const carouselManager = new CarouselManager(imageSlider1, imageSlider2)
+    const carouselManager = new CarouselManager(imageSlider)
 
     // Initialiser l'équipe
     const teamManager = new TeamManager()

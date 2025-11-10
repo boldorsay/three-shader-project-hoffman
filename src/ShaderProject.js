@@ -21,7 +21,6 @@ export class ShaderProject {
         // Créer la scène
         this.scene = new THREE.Scene()
         this.camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.001, 20)
-        this.camera.position.set(-0.158, -0.102, 0.930)
 
 
         // Créer le renderer
@@ -98,9 +97,6 @@ export class ShaderProject {
             if (e.key === 'c' || e.key === 'C') {
                 this.logCameraPosition()
             }
-            if (e.key === 'r' || e.key === 'R') {
-                this.resetCamera()
-            }
         })
 
         console.log('🎥 Contrôles de caméra:')
@@ -127,12 +123,7 @@ export class ShaderProject {
         console.log(`this.controls.update()`)
     }
 
-    resetCamera() {
-        this.camera.position.set(0, 0, 1)
-        this.controls.target.set(0, 0, 0)
-        this.controls.update()
-        console.log('🔄 Caméra réinitialisée à la position par défaut')
-    }
+
 
     destroy() {
         if (this.animateId) {
