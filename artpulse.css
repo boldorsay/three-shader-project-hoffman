@@ -217,13 +217,17 @@ html {
 }
 
 .intro-text ul {
-    list-style: none;
     padding-left: 0;
     margin-top: 20px;
 }
 
 .color-turquoise {
     color: var(--color-accent);
+}
+
+.color-black {
+    color: #000;
+    font-weight: 700;
 }
 
 .intro-text li {
@@ -345,10 +349,11 @@ html {
 .projects {
     padding: 80px 0;
     background: var(--bg-color);
+    min-height: 700px;
+    /* Empêche la section Projet de pousser le Contact plus bas */
 }
 
 .carousel-text ul {
-    list-style: none !important;
     padding-left: 0;
     margin-top: 20px;
 }
@@ -770,6 +775,119 @@ html {
     white-space: nowrap;
 }
 
+/* Section Soutenir */
+.support-section {
+    padding: 80px 0;
+    background: var(--bg-color);
+}
+
+.support-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 var(--grid-gutter);
+    padding-top: 30px;
+}
+
+.support-grid>.support-link:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    /* On retire la bordure pour éviter la double barre,
+       on ne garde que la barre gérée par ::after */
+    border-bottom: none;
+    text-align: left;
+}
+
+/* Pas d'animation rouge / double trait sur la barre principale */
+/* Anciennement, on supprimait les barres sur le premier bouton "Nous soutenir".
+   On les réactive pour profiter aussi de l'animation turquoise → rouge. */
+/* .support-grid>.support-link:first-child::after,
+.support-grid>.support-link:first-child::before {
+    content: none;
+} */
+
+.support-left {
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support-intro-title {
+    font-family: var(--font-sous-titre-family);
+    font-weight: var(--font-sous-titre-weight);
+    font-size: var(--font-sous-titre-size);
+    letter-spacing: var(--font-sous-titre-letter-spacing);
+}
+
+.support-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.support-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-sous-titre-family);
+    font-weight: 400;
+    /* Sous-titre sans gras */
+    font-size: var(--font-sous-titre-size);
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.support-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 4px;
+    background: #40E0D0;
+    /* Turquoise par défaut */
+}
+
+/* État actif / hover : on passe simplement la barre en rouge, sans animation */
+.support-link:hover::after,
+.support-link.active::after {
+    background: #AE3407;
+}
+
+.support-right {
+    grid-column: 4 / -1;
+}
+
+.support-text {
+    font-family: var(--font-content-family);
+    font-weight: var(--font-content-weight);
+    font-size: var(--font-content-size);
+    letter-spacing: var(--font-content-letter-spacing);
+    line-height: 1.6;
+    /* Hauteur minimale suffisante pour que le texte ne pousse pas trop vite la section Contact */
+    min-height: 360px;
+}
+
+.support-text p {
+    margin-bottom: 16px;
+}
+
+.support-btn-inline {
+    margin-top: 10px;
+}
+
+.support-text strong {
+    display: block;
+    font-family: var(--font-content-family);
+    font-weight: 600;
+    font-size: var(--font-content-size);
+    letter-spacing: var(--font-content-letter-spacing);
+    margin-bottom: 6px;
+}
+
 /* Contact */
 .contact {
     padding: 80px 0;
@@ -823,8 +941,39 @@ html {
     .intro-content,
     .carousel,
     .team-content,
-    .p5-text-columns {
+    .p5-text-columns,
+    .support-grid {
         grid-column: 1 / -1;
+    }
+
+    /* Support section : en responsive, on garde 2 colonnes (50/50) */
+    .support-grid {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 32px;
+    }
+
+    .support-grid>.support-link:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+    }
+
+    /* 2 colonnes : gauche = 50%, droite = 50% */
+    .support-left {
+        grid-column: 1 / span 2;
+    }
+
+    .support-right {
+        grid-column: 3 / span 2;
+    }
+
+    .support-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Menus "Soutenir", "Pack" ~30% plus petits */
+    .support-link {
+        font-size: calc(var(--font-sous-titre-size) * 0.7);
     }
 
     .carousel-images {
@@ -879,6 +1028,10 @@ html {
     .carousel-text,
     .team-bio {
         font-size: 18px;
+    }
+
+    .support-btn {
+        display: none;
     }
 }
 

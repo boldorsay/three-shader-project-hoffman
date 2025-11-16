@@ -8,7 +8,7 @@ import { createLights, createAmbientLight } from './src/light.js'
 const carouselData = [
     {
         title: 'Mai 2024',
-        text: `<p>Tout a commencé en mai 2024 avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.</p>`,
+        text: `<p>Tout a commencé en mai 2024 la <span class="color-turquoise"> Direction du Patrimoine Culturel (DPC) </span> du Ministère de la Culture du Sénégal ainsi qu’avec avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.Ces entretiens ont abouti à la proposition d’un programme d’initiation et de sensibilisation – prévu pour novembre – sur la gestion des collections, les métiers d’art et les techniques artistiques, qui a rencontré un accueil très favorable.</p>`,
         images: [
             '/img-project/Mai 2024.JPG',
             '/img-project/Direction Patrimoine National_Mai 2024.JPG',
@@ -22,8 +22,8 @@ const carouselData = [
         text: `<p>Dans le cadre de la 15e édition de la Biennale de Dakar et en partenariat avec la Direction du Patrimoine Culturel du Ministère de la Culture du Sénégal, nous avons organisé :</p>
         <ul>
             <li><span class="color-turquoise">un séminaire sur les approches théoriques et pratiques de la conservation et de la préservation des œuvres d’art</span>, tenu au sein de la Direction du Patrimoine Culture. Ce programme de formation d’une semaine, combinant théorie et pratique, a réuni des responsables, conservateurs et techniciens de diverses institutions de Dakar et d’autres régions du Sénégal ;</li>
-            <li>un atelier sur les techniques artistiques, auquel ont participé une quarantaine d’artistes venus de Dakar, du Sénégal ou d’autres pays africains ;</li>
-            <li>un talk consacré aux enjeux de la conservation et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
+            <li><span class="color-black">un atelier sur les techniques artistiques</span>, auquel ont participé une quarantaine d’artistes venus de Dakar, du Sénégal ou d’autres pays africains ;</li>
+            <li><span class="color-black">un talk consacré aux enjeux de la conservation </span> et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
             '/img-project/Atelier Nov 2024.JPG',
@@ -35,7 +35,7 @@ const carouselData = [
     },
     {
         title: 'Mai 2025',
-        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
+        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
             '/img-project/Ecole Nationale Arts_Mai 2025_1.JPG',
@@ -62,8 +62,7 @@ const carouselData = [
     },
     {
         title: 'Notre projet',
-        text: `<p>Un projet à la mémoire de Koyo Kouoh.</p>
-        <p>Notre objectif est de concevoir et mettre en œuvre un programme de <span class="color-turquoise">formation en conservation-restauration d’œuvres d’art</span> et de valorisation du patrimoine national africain. Ce programme formera des conservateurs et des techniciens spécialisés en gestion du patrimoine artistique et culturel, à travers une approche mêlant enseignements théoriques et pratiques, conçue en réponse aux réalités du terrain.</p>
+        text: `
         <p>Les objectifs pour 2026 :</p>
         <ul>
             <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar ;</li>
@@ -77,6 +76,37 @@ const carouselData = [
         date: 'Futur'
     }
 ]
+
+// Contenus pour la section Soutenir
+const supportData = {
+    intro: `
+        <p>En tant qu’association, ArtPulse s’appuie sur les contributions de mécènes et sponsors, que ceux-ci soient des institutions publiques ou privées, des entreprises ou des particuliers souhaitant soutenir nos projets.</p>
+        <p>Votre soutien permet de développer des programmes de formation, des ateliers, des master class et des actions de sensibilisation autour des métiers d’art et de la conservation-restauration d’œuvres d’art.</p>
+        <p>Merci beaucoup pour votre soutien.</p>
+    `,
+    donations: `
+        <p><strong>Donations</strong></p>
+        <p>Le montant des donations est alloué en fonction des besoins et des projets en cours. Chaque contribution, quel que soit son montant, est précieuse pour soutenir nos actions.</p>
+        <p><strong>Par virement bancaire</strong><br>Compte PostFinance CHF<br>Compte PostFinance EUR</p>
+        <p><strong>Avec Paypal</strong><br><strong>Par TWINT</strong></p>
+    `,
+    'pack-50': `
+        <p><strong>Pack 50 CHF</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce pack symbolique contribue à soutenir une partie des coûts liés à la logistique et au matériel pédagogique.</p>
+    `,
+    'pack-100': `
+        <p><strong>Pack 100 CHF</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce soutien permet de financer des heures de formation, de conseil ou d’accompagnement pour les participantes et participants.</p>
+    `,
+    'pack-200': `
+        <p><strong>Pack 200 CHF</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cette contribution aide à faire vivre un module complet de workshop ou de master class.</p>
+    `,
+    'pack-unlimited': `
+        <p><strong>Pack illimité</strong></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce pack permet d’envisager un partenariat sur mesure, en lien avec les valeurs et les priorités de votre institution ou entreprise.</p>
+    `,
+}
 
 // Données de l'équipe
 const teamData = [
@@ -224,6 +254,35 @@ class HeaderShader {
     }
 }
 
+// Gestion de la section Soutenir
+function initSupportSection() {
+    const supportTextEl = document.getElementById('support-text')
+    const links = document.querySelectorAll('.support-link')
+
+    if (!supportTextEl) return
+
+    const setActiveContent = (key) => {
+        const content = supportData[key] || supportData.intro
+        supportTextEl.innerHTML = content
+    }
+
+    links.forEach((link) => {
+        link.addEventListener('mouseenter', () => {
+            links.forEach(l => l.classList.remove('active'))
+            link.classList.add('active')
+            setActiveContent(link.dataset.support)
+        })
+        link.addEventListener('focus', () => {
+            links.forEach(l => l.classList.remove('active'))
+            link.classList.add('active')
+            setActiveContent(link.dataset.support)
+        })
+    })
+
+    // Contenu par défaut
+    setActiveContent('intro')
+}
+
 // Classe adaptée de P5Canvas pour fonctionner dans la section P5
 class P5CanvasSection {
     constructor(containerElement) {
@@ -239,6 +298,8 @@ class P5CanvasSection {
         this.visibleImages = []
         this.animationId = null
         this.lastMouseMove = Date.now()
+        this.lastTouchX = 0
+        this.lastTouchY = 0
 
         this.init()
     }
@@ -252,6 +313,9 @@ class P5CanvasSection {
         this.loadImages()
 
         this.container.addEventListener('mousemove', (e) => this.manageMouseMove(e))
+        // Support tactile pour mobile
+        this.container.addEventListener('touchstart', (e) => this.manageTouchStart(e), { passive: false })
+        this.container.addEventListener('touchmove', (e) => this.manageTouchMove(e), { passive: false })
         window.addEventListener('resize', () => this.handleResize())
         this.animate()
     }
@@ -347,6 +411,46 @@ class P5CanvasSection {
         if (this.currentIndex >= this.loadedImages.length) {
             this.currentIndex = 0
             this.steps = -120
+        }
+    }
+
+    manageTouchStart(e) {
+        e.preventDefault()
+        const touch = e.touches[0]
+        if (touch) {
+            this.lastTouchX = touch.clientX
+            this.lastTouchY = touch.clientY
+            this.mouseX = touch.clientX
+            this.mouseY = touch.clientY
+            this.lastMouseMove = Date.now()
+        }
+    }
+
+    manageTouchMove(e) {
+        e.preventDefault()
+        const touch = e.touches[0]
+        if (touch) {
+            const clientX = touch.clientX
+            const clientY = touch.clientY
+            const movementX = clientX - this.lastTouchX
+            const movementY = clientY - this.lastTouchY
+
+            this.mouseX = clientX
+            this.mouseY = clientY
+            this.lastMouseMove = Date.now()
+            this.steps += Math.abs(movementX) + Math.abs(movementY)
+
+            if (this.steps >= this.currentIndex * 220 && this.loadedImages.length > 0) {
+                this.addImage(clientX, clientY)
+            }
+
+            if (this.currentIndex >= this.loadedImages.length) {
+                this.currentIndex = 0
+                this.steps = -120
+            }
+
+            this.lastTouchX = clientX
+            this.lastTouchY = clientY
         }
     }
 
@@ -848,4 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialiser l'équipe
     const teamManager = new TeamManager()
+
+    // Initialiser la section Soutenir
+    initSupportSection()
 })
