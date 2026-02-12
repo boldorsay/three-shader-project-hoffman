@@ -26,7 +26,7 @@ const carouselData = [
             <li><span class="color-black">un talk consacré aux enjeux de la conservation </span> et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
-            '/img-project/Atelier   Nov 2024.jpg',
+            '/img-project/Atelier Nov 2024.jpg',
             '/img-project/Atelier techniques artistiques_Nov 2024.jpg',
             '/img-project/Atelier techniques artistiques_Nov 2024_1.jpg',
             '/img-project/Atelier techniques artistiques_ Nov 2024_2.jpg'
@@ -67,8 +67,8 @@ const carouselData = [
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
         images: [
-            '/img-project/Benin_Masterclass_Mai 2025.jpg',
-            '',
+            '/img-project/new/Futur_2.jpg',
+            '/img-project/new/Masterclass Benin_Mai 2025.jpg',
         ],
         date: 'Futur'
     }
