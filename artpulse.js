@@ -530,10 +530,6 @@ class P5CanvasSection {
         const textWidth = columnWidth * 4 + gridGutter * 3
         const textX = (canvasWidth - textWidth) / 2
 
-        // Position verticale du texte (centré verticalement dans la section visible)
-        const spacingBetweenLogoAndText = 80
-        const textColumnWidth = textWidth
-        const lineHeight = 25 * 1.6 // font-size * line-height
         const text1 = "Préserver le patrimoine est le plus beau cadeau qu’on puisse faire aux générations"
 
         // Dessiner le logo "ArtPulse" centré avec "Art" en bold et "Pulse" en regular
