@@ -166,7 +166,9 @@ class HeaderShader {
         this.renderer.setSize(width, height)
         this.container.appendChild(this.renderer.domElement)
 
-        this.scene.background = new THREE.Color('#fff')
+        // Media Query JavaScript pour changer la couleur de fond sur mobile
+        const isMobile = window.matchMedia('(max-width: 768px)').matches
+        this.scene.background = new THREE.Color(isMobile ? '#f5f5f5' : '#ffffff')
 
         const lights = createLights()
         this.scene.add(lights)
@@ -230,6 +232,10 @@ class HeaderShader {
             this.camera.aspect = width / height
             this.camera.updateProjectionMatrix()
             this.renderer.setSize(width, height)
+
+            // Mettre à jour le fond si on change de taille (desktop <-> mobile)
+            const isMobile = window.matchMedia('(max-width: 768px)').matches
+            this.scene.background = new THREE.Color(isMobile ? '#f5f5f5' : '#ffffff')
         }
     }
 
