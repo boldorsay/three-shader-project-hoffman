@@ -167,7 +167,7 @@ class HeaderShader {
         this.container.appendChild(this.renderer.domElement)
 
         // Media Query JavaScript pour changer la couleur de fond sur mobile
-        const isMobile = window.matchMedia('(max-width: 768px)').matches
+        const isMobile = window.innerWidth <= 768
         this.scene.background = new THREE.Color(isMobile ? '#f5f5f5' : '#ffffff')
 
         const lights = createLights()
@@ -234,7 +234,7 @@ class HeaderShader {
             this.renderer.setSize(width, height)
 
             // Mettre à jour le fond si on change de taille (desktop <-> mobile)
-            const isMobile = window.matchMedia('(max-width: 768px)').matches
+            const isMobile = window.innerWidth <= 768
             this.scene.background = new THREE.Color(isMobile ? '#f5f5f5' : '#ffffff')
         }
     }
@@ -542,7 +542,7 @@ class P5CanvasSection {
         this.ctx.textAlign = 'left'
 
         // Taille de police plus grosse
-        const logoFontSize = '8rem'
+        const logoFontSize = window.innerWidth <= 768 ? '4rem' : '8rem'
         const baseFontSize = 16 // 1rem = 16px
         const logoFontPx = parseFloat(logoFontSize) * baseFontSize
 
@@ -563,7 +563,14 @@ class P5CanvasSection {
         const startX = canvasWidth / 2 - totalWidth / 2
 
         // Calculer la hauteur du bloc (logo + espace + texte)
-        const text1Lines = Math.ceil(this.estimateTextLines(text1, textColumnWidth))
+        const spacingBetweenLogoAndText = window.innerWidth <= 768 ? 40 : 80
+        const textFontSize = window.innerWidth <= 768 ? '18px' : '25px'
+        const lineHeight = (window.innerWidth <= 768 ? 18 : 25) * 1.6 // font-size * line-height
+        
+        // Sur mobile, utiliser plus de largeur disponible
+        const effectiveTextWidth = window.innerWidth <= 768 ? canvasWidth - 40 : textWidth
+
+        const text1Lines = Math.ceil(this.estimateTextLines(text1, effectiveTextWidth, textFontSize))
         const estimatedHeight = text1Lines * lineHeight
         const totalBlockHeight = logoFontPx + spacingBetweenLogoAndText + estimatedHeight
         const blockStartY = Math.max((canvasHeight - totalBlockHeight) / 2, 0)
@@ -590,29 +597,32 @@ class P5CanvasSection {
 
         // Dessiner les deux colonnes de texte avec gradient
         this.ctx.save()
-        this.ctx.font = '500 25px "Inter", sans-serif'
+        this.ctx.font = `500 ${textFontSize} "Inter", sans-serif`
         this.ctx.textAlign = 'left'
         this.ctx.textBaseline = 'top'
 
+        // Sur mobile, centrer le texte horizontalement aussi si besoin
+        const effectiveTextX = window.innerWidth <= 768 ? (canvasWidth - effectiveTextWidth) / 2 : textX
+
         // Créer un gradient vertical pour chaque colonne (du turquoise en haut au rouge en bas)
-        const gradient1 = this.ctx.createLinearGradient(textX, textY, textX, textY + estimatedHeight)
+        const gradient1 = this.ctx.createLinearGradient(effectiveTextX, textY, effectiveTextX, textY + estimatedHeight)
         gradient1.addColorStop(0, '#02CDA8') // Turquoise en haut
         gradient1.addColorStop(1, '#AE3407') // Rouge en bas
 
         // Dessiner la première colonne avec gradient
         this.ctx.fillStyle = gradient1
-        this.wrapText(this.ctx, text1, textX, textY, textColumnWidth, lineHeight)
+        this.wrapText(this.ctx, text1, effectiveTextX, textY, effectiveTextWidth, lineHeight)
 
         this.ctx.restore()
     }
 
-    estimateTextLines(text, maxWidth) {
+    estimateTextLines(text, maxWidth, fontSize = '25px') {
         // Estimer le nombre de lignes en mesurant le texte
         const words = text.split(' ')
         let line = ''
         let lines = 1
 
-        this.ctx.font = '500 25px "Inter", sans-serif'
+        this.ctx.font = `500 ${fontSize} "Inter", sans-serif`
 
         for (let i = 0; i < words.length; i++) {
             const testLine = line + words[i] + ' '
