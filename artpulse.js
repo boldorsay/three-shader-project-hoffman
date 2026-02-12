@@ -295,7 +295,9 @@ class P5CanvasSection {
         this.steps = 0
         this.mouseX = 0
         this.mouseY = 0
-        this.imageSize = 260
+        // Taille d'image réactive : plus petite sur mobile
+        const isMobile = window.innerWidth <= 768
+        this.imageSize = isMobile ? 160 : 260
         this.visibleImages = []
         this.animationId = null
         this.lastMouseMove = Date.now()
@@ -663,6 +665,10 @@ class P5CanvasSection {
             const height = sectionRect.height || window.innerHeight
             this.canvas.width = width
             this.canvas.height = height
+            
+            // Mettre à jour la taille des images si on redimensionne
+            const isMobile = window.innerWidth <= 768
+            this.imageSize = isMobile ? 160 : 260
         }
     }
 
