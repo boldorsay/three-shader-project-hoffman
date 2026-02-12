@@ -11,8 +11,7 @@ const carouselData = [
         text: `<p>Tout a commencé en mai 2024 la <span class="color-turquoise"> Direction du Patrimoine Culturel (DPC) </span> du Ministère de la Culture du Sénégal ainsi qu’avec avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.Ces entretiens ont abouti à la proposition d’un programme d’initiation et de sensibilisation – prévu pour novembre – sur la gestion des collections, les métiers d’art et les techniques artistiques, qui a rencontré un accueil très favorable.</p>`,
         images: [
             '/img-project/Mai 2024.jpg',
-            '/img-project/Direction Patrimoine National_Mai 2024.jpg',
-            '/img-project/Mai 2024_Séminaire Direction Patrimoine culturel.jpg',
+            { src: '/img-project/Direction Patrimoine National_Mai 2024.jpg', position: 'top' },
             '/img-project/Ecole Nationale Arts_Mai 2024.jpg'
         ],
         date: 'Mai 2024'
@@ -38,7 +37,6 @@ const carouselData = [
         text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
-            '/img-project/Ecole Nationale Arts_Mai 2025_1.jpg',
             '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg',
             '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
             '/img-project/Ecole Nationale Arts_mai 2025.jpg'
@@ -49,7 +47,7 @@ const carouselData = [
         title: 'Novembre 2025',
         text: `<p>Rencontres avec les doyens de <span class="color-turquoise">l’Université Cheikh Anta Diop, Dakar</span> et <span class="color-turquoise">l’Université Gaston Berger </span>, Saint Louis et définition d’un <span class="color-turquoise">programme pilote sur deux ans</span>, composé de modules théoriques et pratiques pour la formation en conservation-restauration d’œuvres d’art intégré au programme de Master.</p>`,
         images: [
-            '/img-project/Nov 2025_1.jpg',
+            { src: '/img-project/Nov 2025_1.jpg', position: 'top' },
             '/img-project/Nov2025_2.jpg',
             '/img-project/Nov2025_3.jpg',
             '/img-project/Nov2025_4.jpg',
@@ -68,7 +66,7 @@ const carouselData = [
         </ul>`,
         images: [
             '/img-project/new/Futur_2.jpg',
-            '/img-project/new/Masterclass Benin_Mai 2025.jpg',
+            { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
         ],
         date: 'Futur'
     }
@@ -725,11 +723,24 @@ class ImageSlider {
         if (!this.track) return
 
         this.track.innerHTML = ''
-        this.currentProjectImages.forEach((imageSrc, index) => {
+        this.currentProjectImages.forEach((imageItem, index) => {
             const slide = document.createElement('div')
             slide.className = 'image-slider-slide'
             const img = document.createElement('img')
-            img.src = imageSrc
+
+            // Gérer les deux formats : string simple ou objet {src, position}
+            if (typeof imageItem === 'string') {
+                img.src = imageItem
+                img.style.objectPosition = 'center center' // Défaut
+            } else {
+                img.src = imageItem.src
+                if (imageItem.position) {
+                    img.style.objectPosition = `center ${imageItem.position}`
+                } else {
+                    img.style.objectPosition = 'center center'
+                }
+            }
+
             img.alt = `Project image ${index + 1}`
             slide.appendChild(img)
             this.track.appendChild(slide)

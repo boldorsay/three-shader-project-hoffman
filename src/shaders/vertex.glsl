@@ -101,7 +101,7 @@ void main() {
     vColor = u_palette[1];
 
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 4; i++) {
 
 
       float noiseFlow = 5. + float(i) * 0.3;
