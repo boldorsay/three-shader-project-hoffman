@@ -10,9 +10,9 @@ const carouselData = [
         title: 'Mai 2024',
         text: `<p>Tout a commencé en mai 2024 la <span class="color-turquoise"> Direction du Patrimoine Culturel (DPC) </span> du Ministère de la Culture du Sénégal ainsi qu’avec avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.Ces entretiens ont abouti à la proposition d’un programme d’initiation et de sensibilisation – prévu pour novembre – sur la gestion des collections, les métiers d’art et les techniques artistiques, qui a rencontré un accueil très favorable.</p>`,
         images: [
-            '/img-project/Mai 2024.JPG',
-            '/img-project/Direction Patrimoine National_Mai 2024.JPG',
-            '/img-project/Mai 2024_Séminaire Direction Patrimoine culturel.JPG',
+            '/img-project/Mai 2024.jpg',
+            '/img-project/Direction Patrimoine National_Mai 2024.jpg',
+            '/img-project/Mai 2024_Séminaire Direction Patrimoine culturel.jpg',
             '/img-project/Ecole Nationale Arts_Mai 2024.jpg'
         ],
         date: 'Mai 2024'
@@ -26,10 +26,10 @@ const carouselData = [
             <li><span class="color-black">un talk consacré aux enjeux de la conservation </span> et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
-            '/img-project/Atelier Nov 2024.JPG',
-            '/img-project/Atelier techniques artistiques_Nov 2024.JPG',
-            '/img-project/Atelier techniques artistiques_Nov 2024_1.JPG',
-            '/img-project/Atelier techniques artistiques_ Nov 2024_2.JPG'
+            '/img-project/Atelier Nov 2024.jpg',
+            '/img-project/Atelier techniques artistiques_Nov 2024.jpg',
+            '/img-project/Atelier techniques artistiques_Nov 2024_1.jpg',
+            '/img-project/Atelier techniques artistiques_ Nov 2024_2.jpg'
         ],
         date: 'Novembre 2024'
     },
@@ -38,25 +38,22 @@ const carouselData = [
         text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
-            '/img-project/Ecole Nationale Arts_Mai 2025_1.JPG',
-            '/img-project/Ecole Nationale Arts_Mai 2025_2.JPG',
-            '/img-project/Ecole Nationale Arts_Mai 2025_3.JPG',
+            '/img-project/Ecole Nationale Arts_Mai 2025_1.jpg',
+            '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg',
+            '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
             '/img-project/Ecole Nationale Arts_mai 2025.jpg'
         ],
         date: 'Mai 2025'
     },
     {
         title: 'Novembre 2025',
-        text: `<p>En préparation.</p>`,
+        text: `<p>Rencontres avec les doyens de <span class="color-turquoise">l’Université Cheikh Anta Diop, Dakar</span> et <span class="color-turquoise">l’Université Gaston Berger </span>, Saint Louis et définition d’un <span class="color-turquoise">programme pilote sur deux ans</span>, composé de modules théoriques et pratiques pour la formation en conservation-restauration d’œuvres d’art intégré au programme de Master.</p>`,
         images: [
-            '/img-project/Benin_Mai 2025_1.JPG',
-            '/img-project/Benin_Mai 2025_2.jpg',
-            '/img-project/Benin_Mai 2025_3.jpg',
-            '/img-project/Benin_Mai 2025_4.jpg',
-            '/img-project/Benin_Mai 2025_5.jpg',
-            '/img-project/Benin_Mai 2025_6.JPG',
-            '/img-project/Masterclass Benin_Mai 2025.JPG',
-            '/img-project/Benin_Masterclass_Mai 2025.jpg'
+            '/img-project/Nov 2025_1.jpg',
+            '/img-project/Nov2025_2.jpg',
+            '/img-project/Nov2025_3.jpg',
+            '/img-project/Nov2025_4.jpg',
+
         ],
         date: 'Novembre 2025'
     },
@@ -70,8 +67,8 @@ const carouselData = [
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
         images: [
-            '/img-project/Ecole Nationale Arts_mai 2025.jpg',
-            '/img-project/Benin_Masterclass_Mai 2025.jpg'
+            '/img-project/Benin_Masterclass_Mai 2025.jpg',
+            '',
         ],
         date: 'Futur'
     }
@@ -115,7 +112,7 @@ const teamData = [
         bio: `<p>Titulaire d'un Master en Histoire de l'art de l'Université de Genève, Andrea Hoffmann Dobrynski débute sa carrière chez Sotheby's à Genève avant de se spécialiser dans la conservation-restauration de tableaux. Forte de plus de 30 ans d'expérience, elle est la fondatrice et directrice de l'atelier Hoffmann Art Management, où elle met sa passion et son expertise au service de ses clients. Elle participe également à des projets de protection et de sauvegarde du patrimoine, notamment dans le cadre de la rénovation du Palais des Nations de l'ONU à Genève.</p>
         <p>Membre active de la MAG (Association des Métiers d'Art Genève), elle préside la SAMAH (Société des Amis du Musée d'Art et d'Histoire de Genève) de 2018 à 2022. Depuis 2021, elle enseigne l'art de la restauration à la Haute Ecole de Gestion de Genève.</p>
         <p>Sa passion pour l'art africain l'a conduite à restaurer de nombreuses œuvres d'artistes africains établis et émergents, et elle est la restauratrice attitrée d'une des plus grandes collections privées d'art africain contemporain. En 2024, elle fonde ArtPulse Africa.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.37.png',
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.37.jpg',
         imagePosition: 'center center'
     },
     {
@@ -123,7 +120,7 @@ const teamData = [
         bio: `<p>Diplômée d'un Master en Relations internationales de l'IUHEI de Genève, Elisabeth Assal-Bouchardy commence sa carrière au Comité International de la Croix-Rouge, où elle travaille pendant sept ans, à Genève et à l'étranger. Elle poursuit ensuite sa carrière dans le secteur des institutions d'aide sociale avant de fonder sa propre société de conseils, Human Capital Partners, spécialisée dans la protection de la personnalité au travail.</p>
         <p>En 2015, elle crée la Green Flower Foundation, une organisation dédiée au développement durable. Elle initie deux projets en Ethiopie : la création d'un programme de formation en maraîchage biologique et un soutien technique aux jeunes maraîchers se lançant dans cette activité.</p>
         <p>Fille de parents artistes peintres, Elisabeth Assal-Bouchardy nourrit depuis toujours un intérêt profond pour l'art, en particulier pour les métiers d'art, et participe activement au processus créatif.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.41.png',
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.41.jpg',
         imagePosition: 'center center'
     },
     {
@@ -134,7 +131,7 @@ const teamData = [
         <p>Aujourd'hui, elle siège depuis plusieurs années au conseil d'administration du groupe Procimmo, un acteur majeur de la gestion de fonds immobiliers en Suisse.</p>
         <p>Elle occupe également le poste de trésorière de la Société des Amis du Musée d'art et d'histoire (MAH), a présidé le comité de la Fondation Otium (soutien aux personnes atteintes de cancer) et s'implique activement dans plusieurs autres organisations caritatives.</p>
         <p>Animée depuis toujours par une passion pour l'art, elle est aussi une collectionneuse invétérée.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.48.png',
+        image: '/Equpie/Screenshot 2025-10-01 at 17.03.48.jpg',
         imagePosition: 'calc(50% -160px) center'
     }
 ]

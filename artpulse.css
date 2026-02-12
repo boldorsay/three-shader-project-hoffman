@@ -647,6 +647,11 @@ html {
 }
 
 /* Comité de soutien */
+
+.section-subtitle {
+    grid-column: 1 / -1;
+}
+
 .support-committee {
     padding: 80px 0;
     background: var(--bg-color);
