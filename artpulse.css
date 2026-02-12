@@ -1065,6 +1065,11 @@ html {
         padding: 40px 0;
     }
 
+    .support-btn {
+        display: none;
+    }
+}
+
 @media (max-width: 480px) {
     .grid-container {
         padding: 0 15px;
