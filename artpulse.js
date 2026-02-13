@@ -37,7 +37,7 @@ const carouselData = [
         text: `<p>Voyage au Bénin</p><p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
-            { src: '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg', position: 'bottom' },
+            { src: '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg', position: 'top' },
             '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
             '/img-project/Ecole Nationale Arts_mai 2025.jpg'
         ],
