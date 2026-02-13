@@ -377,6 +377,13 @@ html {
     letter-spacing: var(--font-titre-letter-spacing);
     margin-bottom: 40px;
     text-transform: uppercase !important;
+
+}
+
+.title-soutenir {
+    grid-column: 1 / 3;
+    margin-left: 58px;
+
 }
 
 .projects-intro {
@@ -799,14 +806,14 @@ html {
     padding-top: 30px;
 }
 
-.support-grid>.support-link:first-child {
+.support-grid>.support-link[data-support="intro"] {
     grid-column: 1 / -1;
     margin-bottom: 24px;
     padding-bottom: 8px;
-    /* On retire la bordure pour éviter la double barre,
-       on ne garde que la barre gérée par ::after */
     border-bottom: none;
     text-align: left;
+    width: 100%;
+    display: block;
 }
 
 /* Pas d'animation rouge / double trait sur la barre principale */
@@ -962,7 +969,7 @@ html {
         row-gap: 32px;
     }
 
-    .support-grid>.support-link:first-child {
+    .support-grid>.support-link[data-support="intro"] {
         grid-column: 1 / -1;
         margin-bottom: 8px;
     }

@@ -21,8 +21,8 @@ const carouselData = [
         text: `<p>Dans le cadre de la 15e édition de la Biennale de Dakar et en partenariat avec la Direction du Patrimoine Culturel du Ministère de la Culture du Sénégal, nous avons organisé :</p>
         <ul>
             <li><span class="color-turquoise">un séminaire sur les approches théoriques et pratiques de la conservation et de la préservation des œuvres d’art</span>, tenu au sein de la Direction du Patrimoine Culture. Ce programme de formation d’une semaine, combinant théorie et pratique, a réuni des responsables, conservateurs et techniciens de diverses institutions de Dakar et d’autres régions du Sénégal ;</li>
-            <li><span class="color-black">un atelier sur les techniques artistiques</span>, auquel ont participé une quarantaine d’artistes venus de Dakar, du Sénégal ou d’autres pays africains ;</li>
-            <li><span class="color-black">un talk consacré aux enjeux de la conservation </span> et de la préservation de l’art contemporain et du patrimoine culturel africain, réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
+            <li><span class="color-turquoise">un atelier sur les techniques artistiques</span>, auquel ont participé une quarantaine d’artistes venus de Dakar, du Sénégal ou d’autres pays africains ;</li>
+            <li><span class="color-turquoise">un talk consacré aux enjeux de la conservation  et de la préservation de l’art contemporain et du patrimoine culturel africain,</span> réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
             '/img-project/Atelier Nov 2024.jpg',
@@ -34,7 +34,7 @@ const carouselData = [
     },
     {
         title: 'Mai 2025',
-        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
+        text: `<p>Voyage au Bénin</p><p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
             { src: '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg', position: 'bottom' },
@@ -56,12 +56,12 @@ const carouselData = [
         date: 'Novembre 2025'
     },
     {
-        title: 'Notre projet',
+        title: 'Futur',
         text: `
         <p>Les objectifs pour 2026 :</p>
         <ul>
-            <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar ;</li>
-            <li>initier les protagonistes du secteur culturel et artistique du Sénégal et d’autres pays d’Afrique à la formation en conservation-restauration lors de deux semaines de cours intensifs à Dakar et Saint-Louis ;</li>
+            <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar.</li>
+            <li>initier les protagonistes du secteur culturel et artistique du Sénégal et d’autres pays d’Afrique à la formation en conservation-restauration lors de deux semaines de cours intensifs à Dakar et Saint-Louis.</li>
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
         images: [
@@ -74,33 +74,40 @@ const carouselData = [
 
 // Contenus pour la section Soutenir
 const supportData = {
-    intro: `
-        <p>En tant qu’association, ArtPulse s’appuie sur les contributions de mécènes et sponsors, que ceux-ci soient des institutions publiques ou privées, des entreprises ou des particuliers souhaitant soutenir nos projets.</p>
-        <p>Votre soutien permet de développer des programmes de formation, des ateliers, des master class et des actions de sensibilisation autour des métiers d’art et de la conservation-restauration d’œuvres d’art.</p>
-        <p>Merci beaucoup pour votre soutien.</p>
+    'intro': `
+        <p><strong>Notre mission</strong></p>
+
+        <p>Préserver et restaurer des œuvres d’art avec rigueur et passion <br>
+        Favoriser les échanges artistiques entre le Sénégal et la Suisse<br>
+        Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</>
     `,
-    donations: `
-        <p><strong>Donations</strong></p>
-        <p>Le montant des donations est alloué en fonction des besoins et des projets en cours. Chaque contribution, quel que soit son montant, est précieuse pour soutenir nos actions.</p>
-        <p><strong>Par virement bancaire</strong><br>Compte PostFinance CHF<br>Compte PostFinance EUR</p>
-        <p><strong>Avec Paypal</strong><br><strong>Par TWINT</strong></p>
+    'soutenir': `
+    <p><strong>Pourquoi nous soutenir </strong></p>
+    <p>Participer à un projet culturel et scientifique qui relie deux continents et valorise le patrimoine artistique<br>
+    Encourager la formation d’experts en conservation-restauration<br>
+    Contribuer à un impact durable pour les artistes, étudiants et institutions partenaires</p>
     `,
-    'pack-50': `
-        <p><strong>Pack 50 CHF</strong></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce pack symbolique contribue à soutenir une partie des coûts liés à la logistique et au matériel pédagogique.</p>
+    'donations': `
+         <p><strong>Vos dons contribuent </strong></p>
+         <p>au développement de nos programmes de formation en conservation-restauration
+            à l’aménagement de nos salles et ateliers<br>
+            à l’achat de mobilier, matériel et produits pour nos cours de restauration <br>
+            au financement des frais d’inscription et au budget annuel d’un étudiant universitaire, niveau Master<br>
+</p>
+        
     `,
-    'pack-100': `
-        <p><strong>Pack 100 CHF</strong></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce soutien permet de financer des heures de formation, de conseil ou d’accompagnement pour les participantes et participants.</p>
+    'budget': `
+        <p><strong>Budget indicatif pour un étudiant sénégalais</strong></p>
+        <p>Frais universitaires : 50'000 – 75'000 FCFA/an (70 – 110 CHF)
+<br>Coût de la vie mensuel à Dakar : 200'000 – 275'000 FCFA (280 – 385 CHF)</p>
+
     `,
-    'pack-200': `
-        <p><strong>Pack 200 CHF</strong></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cette contribution aide à faire vivre un module complet de workshop ou de master class.</p>
-    `,
-    'pack-unlimited': `
-        <p><strong>Pack illimité</strong></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ce pack permet d’envisager un partenariat sur mesure, en lien avec les valeurs et les priorités de votre institution ou entreprise.</p>
-    `,
+    'non-lucrative': `
+        <p><strong>une association à but non-lucrative</strong></p>
+       <p>Nous sommes une association à but non-lucrative. Chaque contribution, quel que soit son montant, est précieuse pour soutenir nos actions.
+<br>Les dons versés à notre association sont exonérés d’impôts. Un reçu fiscal est délivré sur demande.
+<br>
+Nous vous remercions chaleureusement pour votre soutien.</p>`
 }
 
 // Données de l'équipe
@@ -564,7 +571,7 @@ class P5CanvasSection {
         const spacingBetweenLogoAndText = window.innerWidth <= 768 ? 40 : 80
         const textFontSize = window.innerWidth <= 768 ? '18px' : '25px'
         const lineHeight = (window.innerWidth <= 768 ? 18 : 25) * 1.6 // font-size * line-height
-        
+
         // Sur mobile, utiliser plus de largeur disponible
         const effectiveTextWidth = window.innerWidth <= 768 ? canvasWidth - 40 : textWidth
 
@@ -665,7 +672,7 @@ class P5CanvasSection {
             const height = sectionRect.height || window.innerHeight
             this.canvas.width = width
             this.canvas.height = height
-            
+
             // Mettre à jour la taille des images si on redimensionne
             const isMobile = window.innerWidth <= 768
             this.imageSize = isMobile ? 160 : 260
