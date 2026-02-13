@@ -387,6 +387,7 @@ html {
 }
 
 .projects-intro {
+    text-align: left;
     grid-column: 1 / 5;
     font-family: var(--font-content-family);
     font-weight: var(--font-content-weight);

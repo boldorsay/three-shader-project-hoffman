@@ -8,7 +8,7 @@ import { createLights, createAmbientLight } from './src/light.js'
 const carouselData = [
     {
         title: 'Mai 2024',
-        text: `<p>Tout a commencé en mai 2024 la <span class="color-turquoise"> Direction du Patrimoine Culturel (DPC) </span> du Ministère de la Culture du Sénégal ainsi qu’avec avec un rendez-vous avec la direction de <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques.Ces entretiens ont abouti à la proposition d’un programme d’initiation et de sensibilisation – prévu pour novembre – sur la gestion des collections, les métiers d’art et les techniques artistiques, qui a rencontré un accueil très favorable.</p>`,
+        text: `<p>Tout a commencé en mai 2024 avec des rendez-vous à la <span class="color-turquoise"> Direction du Patrimoine Culturel (DPC) </span> du Ministère de la Culture du Sénégal ainsi qu’ à <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture (ENAMC)</span> à Dakar afin de proposer un atelier d’une journée sur les techniques artistiques. Ces entretiens ont abouti à la proposition d’un programme d’initiation et de sensibilisation – prévu pour novembre – sur la gestion des collections, les métiers d’art et les techniques artistiques, qui a rencontré un accueil très favorable.</p>`,
         images: [
             '/img-project/Mai 2024.jpg',
             { src: '/img-project/Direction Patrimoine National_Mai 2024.jpg', position: 'top' },
@@ -34,8 +34,8 @@ const carouselData = [
     },
     {
         title: 'Mai 2025',
-        text: `<p>Voyage au Bénin</p><p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
-        <p>Un mois plus tard, nous avons voyagé au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
+        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
+        <p>Un mois plus tard, un voyage au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
             { src: '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg', position: 'top' },
             '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
@@ -60,7 +60,7 @@ const carouselData = [
         text: `
         <p>Les objectifs pour 2026 :</p>
         <ul>
-            <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar.</li>
+            <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar en novembre.</li>
             <li>initier les protagonistes du secteur culturel et artistique du Sénégal et d’autres pays d’Afrique à la formation en conservation-restauration lors de deux semaines de cours intensifs à Dakar et Saint-Louis.</li>
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
@@ -79,7 +79,14 @@ const supportData = {
 
         <p>Préserver et restaurer des œuvres d’art avec rigueur et passion <br>
         Favoriser les échanges artistiques entre le Sénégal et la Suisse<br>
-        Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</>
+        Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
+            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">100 CHF</button>
+            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">250 CHF</button>
+            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">500 CHF</button>
+            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">Libre</button>
+        </div>
     `,
     'soutenir': `
     <p><strong>Pourquoi nous soutenir </strong></p>
@@ -136,7 +143,7 @@ const teamData = [
         <p>Aujourd'hui, elle siège depuis plusieurs années au conseil d'administration du groupe Procimmo, un acteur majeur de la gestion de fonds immobiliers en Suisse.</p>
         <p>Elle occupe également le poste de trésorière de la Société des Amis du Musée d'art et d'histoire (MAH), a présidé le comité de la Fondation Otium (soutien aux personnes atteintes de cancer) et s'implique activement dans plusieurs autres organisations caritatives.</p>
         <p>Animée depuis toujours par une passion pour l'art, elle est aussi une collectionneuse invétérée.</p>`,
-        image: '/Equpie/Screenshot 2025-10-01 at 17.03.48.jpg',
+        image: '/Equpie/Screenshot 2026-02-13 at 16.50.25.png',
         imagePosition: 'calc(50% -160px) center'
     }
 ]
@@ -960,8 +967,28 @@ class TeamManager {
     }
 }
 
+// Gestion du scroll fluide pour le bouton "Nous soutenir" de l'intro
+function initScrollAnchor() {
+    const introBtn = document.querySelector('.intro-btn .support-btn')
+    const targetSection = document.getElementById('soutenir')
+
+    if (introBtn && targetSection) {
+        introBtn.addEventListener('click', () => {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        })
+    }
+}
+
 // Initialisation des composants
 document.addEventListener('DOMContentLoaded', () => {
+    // ... existant ...
+
+    // Initialiser le scroll fluide
+    initScrollAnchor()
+
     // Initialiser le shader dans le header
     const headerElement = document.getElementById('header-shader')
     if (headerElement) {
