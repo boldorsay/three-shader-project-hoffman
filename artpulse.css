@@ -647,7 +647,8 @@ html {
 
 .team-image {
     grid-column: 7 / -1;
-    width: 100%;
+    width: 120%;
+    margin-left: -20%;
 }
 
 .team-image img {
