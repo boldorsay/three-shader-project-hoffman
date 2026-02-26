@@ -25,7 +25,7 @@ const carouselData = [
             <li><span class="color-turquoise">un talk consacré aux enjeux de la conservation  et de la préservation de l’art contemporain et du patrimoine culturel africain,</span> réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
-            { src: '/img-project/Atelier Nov 2024.jpg', position: 'right' },
+            { src: '/img-project/Atelier Nov 2024.jpg', position: 'left' },
             '/img-project/Atelier techniques artistiques_Nov 2024.jpg',
             '/img-project/Atelier techniques artistiques_Nov 2024_1.jpg',
             '/img-project/Atelier techniques artistiques_ Nov 2024_2.jpg'
@@ -49,7 +49,7 @@ const carouselData = [
         images: [
             { src: '/img-project/Nov 2025_1.jpg', position: 'top' },
             '/img-project/Nov2025_2.jpg',
-            { src: '/img-project/Nov2025_3.jpg', position: 'left' },
+            { src: '/img-project/Nov2025_3.jpg', position: 'right' },
             '/img-project/Nov2025_4.jpg',
 
         ],
@@ -65,7 +65,7 @@ const carouselData = [
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
         images: [
-            { src: '/img-project/new/Futur_2.jpg', position: 'right' },
+            { src: '/img-project/new/Futur_2.jpg', position: 'left' },
             { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
             '/img-project//Benin_Mai 2025_3.jpg',
             '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
@@ -718,6 +718,14 @@ class ImageSlider {
         this.currentSlideIndex = 0
         this.currentProjectImages = []
         this.slides = []
+        
+        // Variables pour le drag/swipe
+        this.isDragging = false
+        this.startPos = 0
+        this.currentTranslate = 0
+        this.prevTranslate = 0
+        this.movedBy = 0
+        
         this.onResize = this.handleResize.bind(this)
         this.init()
     }
@@ -725,7 +733,25 @@ class ImageSlider {
     init() {
         if (!this.container) return
 
+        // Events Touch
+        this.container.addEventListener('touchstart', this.touchStart.bind(this), { passive: true })
+        this.container.addEventListener('touchend', this.touchEnd.bind(this))
+        this.container.addEventListener('touchmove', this.touchMove.bind(this), { passive: true })
+
+        // Events Mouse
+        this.container.addEventListener('mousedown', this.touchStart.bind(this))
+        this.container.addEventListener('mouseup', this.touchEnd.bind(this))
+        this.container.addEventListener('mouseleave', () => {
+            if (this.isDragging) this.touchEnd()
+            this.container.classList.remove('cursor-left', 'cursor-right')
+        })
+
         this.container.addEventListener('mousemove', (e) => {
+            if (this.isDragging) {
+                this.touchMove(e)
+                return
+            }
+            
             const rect = this.container.getBoundingClientRect()
             const mouseX = e.clientX - rect.left
             const percentage = (mouseX / rect.width) * 100
@@ -740,6 +766,13 @@ class ImageSlider {
         })
 
         this.container.addEventListener('click', (e) => {
+            // Si on a draggué (plus de 5px), on ignore le click
+            if (Math.abs(this.movedBy) > 5) {
+                e.preventDefault()
+                e.stopPropagation()
+                return
+            }
+
             const rect = this.container.getBoundingClientRect()
             const mouseX = e.clientX - rect.left
             const percentage = (mouseX / rect.width) * 100
@@ -751,11 +784,59 @@ class ImageSlider {
             }
         })
 
-        this.container.addEventListener('mouseleave', () => {
-            this.container.classList.remove('cursor-left', 'cursor-right')
-        })
-
         window.addEventListener('resize', this.onResize)
+    }
+
+    getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+    }
+
+    touchStart(event) {
+        this.isDragging = true
+        this.startPos = this.getPositionX(event)
+        this.movedBy = 0
+        
+        // Désactiver transition pour mouvement fluide instantané
+        if (this.track) {
+            this.track.style.transition = 'none'
+        }
+    }
+
+    touchMove(event) {
+        if (this.isDragging) {
+            const currentPosition = this.getPositionX(event)
+            this.movedBy = currentPosition - this.startPos
+            
+            const width = this.container.offsetWidth
+            const currentTranslate = -this.currentSlideIndex * width + this.movedBy
+            
+            if (this.track) {
+                this.track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`
+            }
+        }
+    }
+
+    touchEnd() {
+        this.isDragging = false
+        const movedBy = this.movedBy
+        const threshold = 100 // Seuil de pixels pour changer de slide
+
+        // Restaurer la transition (revenir au CSS ou définir explicitement)
+        if (this.track) {
+            this.track.style.transition = '' // Utilise la valeur CSS par défaut
+        }
+
+        if (movedBy < -threshold) {
+            this.next()
+        } else if (movedBy > threshold) {
+            this.previous()
+        } else {
+            // Revenir à la position actuelle (snap back)
+            this.updatePosition()
+        }
+        
+        // Réinitialiser movedBy après un court délai pour que l'event click puisse le lire
+        setTimeout(() => { this.movedBy = 0 }, 100) 
     }
 
     setImages(images) {
@@ -787,6 +868,9 @@ class ImageSlider {
             }
 
             img.alt = `Project image ${index + 1}`
+            // Empêcher le comportement natif de drag sur l'image
+            img.addEventListener('dragstart', (e) => e.preventDefault())
+            
             slide.appendChild(img)
             this.track.appendChild(slide)
         })
@@ -820,6 +904,10 @@ class ImageSlider {
                 this.track.style.transition = previousTransition || ''
             })
         } else {
+            // S'assurer que la transition est active (au cas où elle a été désactivée par le drag)
+            if (this.track.style.transition === 'none') {
+                 this.track.style.transition = '' // Revert to CSS
+            }
             this.track.style.transform = `translate3d(${offset}px, 0, 0)`
         }
     }

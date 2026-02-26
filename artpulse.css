@@ -993,7 +993,7 @@ a {
     }
 
     .support-text {
-        font-size: 16px;
+        font-size: var(--font-content-size);
         line-height: 1.5;
     }
 
@@ -1105,7 +1105,7 @@ a {
     .logo {
         font-size: 2.5rem;
     }
-    
+
     /* Fix pour la couleur bleue sur mobile - forcer le noir */
     a,
     .support-btn,
