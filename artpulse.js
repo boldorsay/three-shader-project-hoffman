@@ -34,12 +34,12 @@ const carouselData = [
     },
     {
         title: 'Mai 2025',
-        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-black">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
+        text: `<p>En mai 2025, nous avons été invités à donner <span class="color-turquoise">un cours de sensibilisation sur les techniques artistiques</span> à <span class="color-turquoise">l’Ecole Nationale des Arts et Métiers de la Culture</span> à Dakar.</p>
         <p>Un mois plus tard, un voyage au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
-            { src: '/img-project/Ecole Nationale Arts_Mai 2025_2.jpg', position: 'top' },
+            { src: '/img-project/Mai 2025_b.jpg', position: 'top' },
             '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
-            '/img-project/Ecole Nationale Arts_mai 2025.jpg'
+            '/img-project/Screenshot 2026-02-26 at 11.47.16.png'
         ],
         date: 'Mai 2025'
     },
@@ -67,6 +67,8 @@ const carouselData = [
         images: [
             '/img-project/new/Futur_2.jpg',
             { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
+            '/img-project//Benin_Mai 2025_3.jpg',
+            '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
         ],
         date: 'Futur'
     }
@@ -80,13 +82,21 @@ const supportData = {
         <p>Préserver et restaurer des œuvres d’art avec rigueur et passion <br>
         Favoriser les échanges artistiques entre le Sénégal et la Suisse<br>
         Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</p>
-        
+
+        <p style="margin-top: 20px;">Paiement possible par TWINT (via Stripe)</p>
         <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
-            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">100 CHF</button>
-            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">250 CHF</button>
-            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">500 CHF</button>
-            <button class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">Libre</button>
+           <a href="https://buy.stripe.com/aFadRb3Wy6G29ad4Z12oE00" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">100 CHF</a>
+            <a href="https://buy.stripe.com/3cI7sN78Kfcybil0IL2oE01" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">250 CHF</a>
+            <a href="https://buy.stripe.com/7sYcN7eBc5BY0DH2QT2oE02" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">500 CHF</a>
+            <a href="https://donate.stripe.com/aFabJ38cOggCdqtfDF2oE03" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">Libre</a>
         </div>
+        <br>
+        <p><strong>Virement bancaire direct :</strong>
+        Andrea Hoffmann Dobrynski<br>
+        Route des Jeunes 4ter<br>
+        Les Acacias, 1227 Genève<br>
+        IBAN : CH70 0900 0000 1683 4442 3<br>
+        Compte : 16-834442-3</p>
     `,
     'soutenir': `
     <p><strong>Pourquoi nous soutenir </strong></p>
@@ -96,7 +106,7 @@ const supportData = {
     `,
     'donations': `
          <p><strong>Vos dons contribuent </strong></p>
-         <p>au développement de nos programmes de formation en conservation-restauration
+         <p>au développement de nos programmes de formation en conservation-restauration et
             à l’aménagement de nos salles et ateliers<br>
             à l’achat de mobilier, matériel et produits pour nos cours de restauration <br>
             au financement des frais d’inscription et au budget annuel d’un étudiant universitaire, niveau Master<br>
@@ -125,7 +135,8 @@ const teamData = [
         <p>Membre active de la MAG (Association des Métiers d'Art Genève), elle préside la SAMAH (Société des Amis du Musée d'Art et d'Histoire de Genève) de 2018 à 2022. Depuis 2021, elle enseigne l'art de la restauration à la Haute Ecole de Gestion de Genève.</p>
         <p>Sa passion pour l'art africain l'a conduite à restaurer de nombreuses œuvres d'artistes africains établis et émergents, et elle est la restauratrice attitrée d'une des plus grandes collections privées d'art africain contemporain. En 2024, elle fonde ArtPulse Africa.</p>`,
         image: '/Equpie/Screenshot 2025-10-01 at 17.03.37.jpg',
-        imagePosition: 'center center'
+        imagePosition: 'center center',
+        email: 'info@artpulse.ch'
     },
     {
         subtitle: 'Elisabeth Assal-Bouchardy – Vice-présidente',
@@ -133,7 +144,8 @@ const teamData = [
         <p>En 2015, elle crée la Green Flower Foundation, une organisation dédiée au développement durable. Elle initie deux projets en Ethiopie : la création d'un programme de formation en maraîchage biologique et un soutien technique aux jeunes maraîchers se lançant dans cette activité.</p>
         <p>Fille de parents artistes peintres, Elisabeth Assal-Bouchardy nourrit depuis toujours un intérêt profond pour l'art, en particulier pour les métiers d'art, et participe activement au processus créatif.</p>`,
         image: '/Equpie/Screenshot 2025-10-01 at 17.03.41.jpg',
-        imagePosition: 'center center'
+        imagePosition: 'center center',
+        email: 'info@artpulse.ch'
     },
     {
         subtitle: 'Dominique de Saint Pierre – Trésorière',
@@ -144,7 +156,8 @@ const teamData = [
         <p>Elle occupe également le poste de trésorière de la Société des Amis du Musée d'art et d'histoire (MAH), a présidé le comité de la Fondation Otium (soutien aux personnes atteintes de cancer) et s'implique activement dans plusieurs autres organisations caritatives.</p>
         <p>Animée depuis toujours par une passion pour l'art, elle est aussi une collectionneuse invétérée.</p>`,
         image: '/Equpie/Screenshot 2026-02-13 at 16.50.25.png',
-        imagePosition: 'calc(50% -160px) center'
+        imagePosition: 'calc(50% -160px) center',
+        email: 'info@artpulse.ch'
     }
 ]
 
@@ -546,7 +559,7 @@ class P5CanvasSection {
         const textWidth = columnWidth * 4 + gridGutter * 3
         const textX = (canvasWidth - textWidth) / 2
 
-        const text1 = "Préserver le patrimoine est le plus beau cadeau qu’on puisse faire aux générations"
+        const text1 = "Préserver le patrimoine est le plus beau cadeau qu’on puisse faire aux générations futures"
 
         // Dessiner le logo "ArtPulse" centré avec "Art" en bold et "Pulse" en regular
         this.ctx.save()
@@ -948,6 +961,7 @@ class TeamManager {
         const subtitleEl = document.getElementById('team-subtitle')
         const bioEl = document.getElementById('team-bio')
         const imageEl = document.getElementById('team-main-image')
+        const mailEl = document.querySelector('.team-mail')
         const thumbnails = document.querySelectorAll('.team-thumbnail')
 
         if (subtitleEl) subtitleEl.textContent = data.subtitle
@@ -958,6 +972,16 @@ class TeamManager {
                 imageEl.style.objectPosition = data.imagePosition
             } else {
                 imageEl.style.objectPosition = 'center center'
+            }
+        }
+
+        if (mailEl) {
+            if (data.email) {
+                mailEl.href = `mailto:${data.email}`
+                mailEl.title = data.email // Show email on hover
+                mailEl.style.display = 'inline-flex'
+            } else {
+                mailEl.style.display = 'none'
             }
         }
 

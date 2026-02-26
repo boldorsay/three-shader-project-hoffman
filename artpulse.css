@@ -47,6 +47,10 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
 
 /* Système de grille 8 colonnes centré */
 .grid-container {
@@ -261,8 +265,11 @@ html {
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
 /* Animation du gradient uniquement au hover */
@@ -541,7 +548,7 @@ html {
 .carousel-arrow {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #000;
     cursor: pointer;
     padding: 10px 20px;
