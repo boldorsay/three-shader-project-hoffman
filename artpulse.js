@@ -92,7 +92,7 @@ const supportData = {
         </div>
         <br>
         <p><strong>Virement bancaire direct :</strong>
-        Andrea Hoffmann Dobrynski<br>
+        ArtPulse Africa<br>
         Route des Jeunes 4ter<br>
         Les Acacias, 1227 Genève<br>
         IBAN : CH70 0900 0000 1683 4442 3<br>
@@ -205,16 +205,17 @@ class HeaderShader {
         this.shaderMesh = createShaderPlane()
         this.scene.add(this.shaderMesh)
 
-        this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-        this.controls.enableDamping = false
-        this.controls.dampingFactor = 0.05
-        this.controls.enablePan = false
-        this.controls.enableRotate = false
-        this.controls.enableZoom = false
-        this.controls.autoRotate = false
-        // Fixer la caméra
-        this.controls.target.set(0, 0, 0)
-        this.controls.update()
+        // Désactivation des contrôles pour permettre le scroll de la page
+        // this.controls = new OrbitControls(this.camera, this.renderer.domElement)
+        // this.controls.enableDamping = false
+        // this.controls.dampingFactor = 0.05
+        // this.controls.enablePan = false
+        // this.controls.enableRotate = false
+        // this.controls.enableZoom = false
+        // this.controls.autoRotate = false
+        // // Fixer la caméra
+        // this.controls.target.set(0, 0, 0)
+        // this.controls.update()
 
         this.setupPalette()
         this.animate()
@@ -245,6 +246,7 @@ class HeaderShader {
             uniforms.u_time.value = this.timeSpeed
 
             // Caméra fixe, pas besoin de mettre à jour les contrôles
+            // if (this.controls) this.controls.update()
 
             this.renderer.render(this.scene, this.camera)
         }
@@ -276,9 +278,9 @@ class HeaderShader {
                 this.renderer.domElement.parentNode.removeChild(this.renderer.domElement)
             }
         }
-        if (this.controls) {
-            this.controls.dispose()
-        }
+        // if (this.controls) {
+        //     this.controls.dispose()
+        // }
     }
 }
 
@@ -718,14 +720,14 @@ class ImageSlider {
         this.currentSlideIndex = 0
         this.currentProjectImages = []
         this.slides = []
-        
+
         // Variables pour le drag/swipe
         this.isDragging = false
         this.startPos = 0
         this.currentTranslate = 0
         this.prevTranslate = 0
         this.movedBy = 0
-        
+
         this.onResize = this.handleResize.bind(this)
         this.init()
     }
@@ -751,7 +753,7 @@ class ImageSlider {
                 this.touchMove(e)
                 return
             }
-            
+
             const rect = this.container.getBoundingClientRect()
             const mouseX = e.clientX - rect.left
             const percentage = (mouseX / rect.width) * 100
@@ -795,7 +797,7 @@ class ImageSlider {
         this.isDragging = true
         this.startPos = this.getPositionX(event)
         this.movedBy = 0
-        
+
         // Désactiver transition pour mouvement fluide instantané
         if (this.track) {
             this.track.style.transition = 'none'
@@ -806,10 +808,10 @@ class ImageSlider {
         if (this.isDragging) {
             const currentPosition = this.getPositionX(event)
             this.movedBy = currentPosition - this.startPos
-            
+
             const width = this.container.offsetWidth
             const currentTranslate = -this.currentSlideIndex * width + this.movedBy
-            
+
             if (this.track) {
                 this.track.style.transform = `translate3d(${currentTranslate}px, 0, 0)`
             }
@@ -834,9 +836,9 @@ class ImageSlider {
             // Revenir à la position actuelle (snap back)
             this.updatePosition()
         }
-        
+
         // Réinitialiser movedBy après un court délai pour que l'event click puisse le lire
-        setTimeout(() => { this.movedBy = 0 }, 100) 
+        setTimeout(() => { this.movedBy = 0 }, 100)
     }
 
     setImages(images) {
@@ -870,7 +872,7 @@ class ImageSlider {
             img.alt = `Project image ${index + 1}`
             // Empêcher le comportement natif de drag sur l'image
             img.addEventListener('dragstart', (e) => e.preventDefault())
-            
+
             slide.appendChild(img)
             this.track.appendChild(slide)
         })
@@ -906,7 +908,7 @@ class ImageSlider {
         } else {
             // S'assurer que la transition est active (au cas où elle a été désactivée par le drag)
             if (this.track.style.transition === 'none') {
-                 this.track.style.transition = '' // Revert to CSS
+                this.track.style.transition = '' // Revert to CSS
             }
             this.track.style.transform = `translate3d(${offset}px, 0, 0)`
         }
