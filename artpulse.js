@@ -38,7 +38,6 @@ const carouselData = [
         <p>Un mois plus tard, un voyage au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
             { src: '/img-project/Mai 2025_b.jpg', position: 'top' },
-
             { src: '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg', position: 'top' },
             '/img-project/Screenshot 2026-02-26 at 11.47.16.png'
         ],
@@ -48,10 +47,10 @@ const carouselData = [
         title: 'Novembre 2025',
         text: `<p>Rencontres avec les doyens de <span class="color-turquoise">l’Université Cheikh Anta Diop, Dakar</span> et <span class="color-turquoise">l’Université Gaston Berger </span>, Saint Louis et définition d’un <span class="color-turquoise">programme pilote sur deux ans</span>, composé de modules théoriques et pratiques pour la formation en conservation-restauration d’œuvres d’art intégré au programme de Master.</p>`,
         images: [
-            { src: '/img-project/Nov 2025_1.jpg', position: 'top' },
+            '/img-project/Nov2025_4.jpg',
             '/img-project/Nov2025_2.jpg',
             { src: '/img-project/Nov2025_3.jpg', position: 'right' },
-            '/img-project/Nov2025_4.jpg',
+
 
         ],
         date: 'Novembre 2025'
@@ -66,10 +65,10 @@ const carouselData = [
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
         </ul>`,
         images: [
-            { src: '/img-project/new/Futur_2.jpg', position: 'left' },
+            '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
             { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
             '/img-project//Benin_Mai 2025_3.jpg',
-            '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
+
         ],
         date: 'Futur'
     }
