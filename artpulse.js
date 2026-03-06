@@ -25,8 +25,8 @@ const carouselData = [
             <li><span class="color-turquoise">un talk consacré aux enjeux de la conservation  et de la préservation de l’art contemporain et du patrimoine culturel africain,</span> réunissant sept intervenants de la scène artistique sénégalaise et internationale.</li>
         </ul>`,
         images: [
-            { src: '/img-project/Atelier Nov 2024.jpg', position: 'left' },
             '/img-project/Atelier techniques artistiques_Nov 2024.jpg',
+            { src: '/img-project/Atelier Nov 2024.jpg', position: 'left' },
             '/img-project/Atelier techniques artistiques_Nov 2024_1.jpg',
             '/img-project/Atelier techniques artistiques_ Nov 2024_2.jpg'
         ],
@@ -38,7 +38,8 @@ const carouselData = [
         <p>Un mois plus tard, un voyage au Bénin pour participer au festival artistique des <span class="color-turquoise">Rencontres Contemporaines de Cotonou</span>. Dans son programme scientifique, nous avons dirigé <span class="color-turquoise">une Master Class traitant différentes thématiques autour des métiers d’art et des techniques artistiques</span>, réunissant une vingtaine d’artistes en résidence ou venus du Bénin et des pays avoisinants.</p>`,
         images: [
             { src: '/img-project/Mai 2025_b.jpg', position: 'top' },
-            '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg',
+
+            { src: '/img-project/Ecole Nationale Arts_Mai 2025_3.jpg', position: 'top' },
             '/img-project/Screenshot 2026-02-26 at 11.47.16.png'
         ],
         date: 'Mai 2025'
