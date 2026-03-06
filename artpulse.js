@@ -66,8 +66,8 @@ const carouselData = [
         </ul>`,
         images: [
             '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
-            { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
             '/img-project//Benin_Mai 2025_3.jpg',
+            { src: '/img-project/new/Masterclass Benin_Mai 2025.jpg', position: 'top' },
 
         ],
         date: 'Futur'
