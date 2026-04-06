@@ -63,6 +63,9 @@ const carouselData = [
             <li>présenter le programme de formation en conservation-restauration d’œuvres d’art dans le programme scientifique et pédagogique du IN de la 16e édition de la Biennale de Dakar en novembre.</li>
             <li>initier les protagonistes du secteur culturel et artistique du Sénégal et d’autres pays d’Afrique à la formation en conservation-restauration lors de deux semaines de cours intensifs à Dakar et Saint-Louis.</li>
             <li>adapter en continu le contenu du projet aux besoins des acteurs du terrain.</li>
+
+                            <button class="support-btn futur-btn">Nous soutenir</button>
+
         </ul>`,
         images: [
             '/img-project/Screenshot 2026-02-26 at 11.45.32.png',
@@ -77,18 +80,17 @@ const carouselData = [
 // Contenus pour la section Soutenir
 const supportData = {
     'intro': `
-        <p><strong>Notre mission</strong></p>
-
-        <p>Préserver et restaurer des œuvres d’art avec rigueur et passion <br>
-        Favoriser les échanges artistiques entre le Sénégal et la Suisse<br>
-        Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</p>
-
+    <p><strong>Pourquoi nous soutenir </strong></p>
+    <p>Participer à un projet culturel et scientifique qui relie deux continents et valorise le patrimoine artistique<br>
+    Encourager la formation d’experts en conservation-restauration<br>
+    Contribuer à un impact durable pour les artistes, étudiants et institutions partenaires</p>
+        
         <p style="margin-top: 20px;">Paiement possible par TWINT (via Stripe)</p>
         <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
-           <a href="https://buy.stripe.com/aFadRb3Wy6G29ad4Z12oE00" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">100 CHF</a>
-            <a href="https://buy.stripe.com/3cI7sN78Kfcybil0IL2oE01" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">250 CHF</a>
-            <a href="https://buy.stripe.com/7sYcN7eBc5BY0DH2QT2oE02" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">500 CHF</a>
-            <a href="https://donate.stripe.com/aFabJ38cOggCdqtfDF2oE03" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">Libre</a>
+           <a href="https://donate.raisenow.io/xnkft" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">100 CHF</a>
+            <a href="https://donate.raisenow.io/xnkft" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">250 CHF</a>
+            <a href="https://donate.raisenow.io/xnkft" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">500 CHF</a>
+            <a href="https://donate.raisenow.io/xnkft" target="_blank" class="support-btn" style="font-size: 18px; padding: 10px 25px; border-width: 2px;">Libre</a>
         </div>
         <br>
         <p><strong>Virement bancaire direct :</strong>
@@ -99,10 +101,14 @@ const supportData = {
         Compte : 16-834442-3</p>
     `,
     'soutenir': `
-    <p><strong>Pourquoi nous soutenir </strong></p>
-    <p>Participer à un projet culturel et scientifique qui relie deux continents et valorise le patrimoine artistique<br>
-    Encourager la formation d’experts en conservation-restauration<br>
-    Contribuer à un impact durable pour les artistes, étudiants et institutions partenaires</p>
+
+    <p><strong>Notre mission</strong></p>
+
+        <p>Préserver et restaurer des œuvres d’art avec rigueur et passion <br>
+        Favoriser les échanges artistiques entre le Sénégal et la Suisse<br>
+        Soutenir la créativité locale tout en formant de futurs professionnels de la conservation-restauration</p>
+
+    
     `,
     'donations': `
          <p><strong>Vos dons contribuent </strong></p>
@@ -110,6 +116,11 @@ const supportData = {
             à l’aménagement de nos salles et ateliers<br>
             à l’achat de mobilier, matériel et produits pour nos cours de restauration <br>
             au financement des frais d’inscription et au budget annuel d’un étudiant universitaire, niveau Master<br>
+             <p><strong>une association à but non-lucrative</strong></p>
+       <p>Nous sommes une association à but non-lucrative. Chaque contribution, quel que soit son montant, est précieuse pour soutenir nos actions.
+<br>Les dons versés à notre association sont exonérés d’impôts. Un reçu fiscal est délivré sur demande.
+<br>
+Nous vous remercions chaleureusement pour votre soutien.</p>
 </p>
         
     `,
@@ -120,11 +131,7 @@ const supportData = {
 
     `,
     'non-lucrative': `
-        <p><strong>une association à but non-lucrative</strong></p>
-       <p>Nous sommes une association à but non-lucrative. Chaque contribution, quel que soit son montant, est précieuse pour soutenir nos actions.
-<br>Les dons versés à notre association sont exonérés d’impôts. Un reçu fiscal est délivré sur demande.
-<br>
-Nous vous remercions chaleureusement pour votre soutien.</p>`
+       `
 }
 
 // Données de l'équipe
@@ -720,6 +727,8 @@ class ImageSlider {
         this.currentSlideIndex = 0
         this.currentProjectImages = []
         this.slides = []
+        this.autoAdvanceMs = 3000
+        this.autoAdvanceTimerId = null
 
         // Variables pour le drag/swipe
         this.isDragging = false
@@ -789,6 +798,19 @@ class ImageSlider {
         window.addEventListener('resize', this.onResize)
     }
 
+    stopAutoAdvance() {
+        if (this.autoAdvanceTimerId != null) {
+            clearInterval(this.autoAdvanceTimerId)
+            this.autoAdvanceTimerId = null
+        }
+    }
+
+    startAutoAdvance() {
+        this.stopAutoAdvance()
+        if (!this.currentProjectImages || this.currentProjectImages.length <= 1) return
+        this.autoAdvanceTimerId = setInterval(() => this.next(), this.autoAdvanceMs)
+    }
+
     getPositionX(event) {
         return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
     }
@@ -797,6 +819,7 @@ class ImageSlider {
         this.isDragging = true
         this.startPos = this.getPositionX(event)
         this.movedBy = 0
+        this.stopAutoAdvance()
 
         // Désactiver transition pour mouvement fluide instantané
         if (this.track) {
@@ -839,9 +862,11 @@ class ImageSlider {
 
         // Réinitialiser movedBy après un court délai pour que l'event click puisse le lire
         setTimeout(() => { this.movedBy = 0 }, 100)
+        this.startAutoAdvance()
     }
 
     setImages(images) {
+        this.stopAutoAdvance()
         this.currentProjectImages = images
         this.currentSlideIndex = 0
         this.render()
@@ -880,18 +905,21 @@ class ImageSlider {
         this.slides = Array.from(this.track.children)
         this.updateSlideWidths()
         this.updatePosition(true)
+        this.startAutoAdvance()
     }
 
     previous() {
         if (this.currentProjectImages.length === 0) return
         this.currentSlideIndex = (this.currentSlideIndex - 1 + this.currentProjectImages.length) % this.currentProjectImages.length
         this.updatePosition()
+        this.startAutoAdvance()
     }
 
     next() {
         if (this.currentProjectImages.length === 0) return
         this.currentSlideIndex = (this.currentSlideIndex + 1) % this.currentProjectImages.length
         this.updatePosition()
+        this.startAutoAdvance()
     }
 
     updatePosition(disableTransition = false) {
