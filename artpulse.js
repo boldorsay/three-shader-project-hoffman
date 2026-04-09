@@ -1124,12 +1124,98 @@ function initScrollAnchor() {
     }
 }
 
+function initSiteNavigation() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle')
+    const mobileMenu = document.getElementById('mobile-menu-overlay')
+    const menuLinks = document.querySelectorAll('.side-nav a, .mobile-menu-overlay a')
+    const sectionIds = Array.from(new Set(
+        Array.from(menuLinks)
+            .map((link) => link.getAttribute('href'))
+            .filter((href) => href && href.startsWith('#'))
+    ))
+    const sections = sectionIds
+        .map((id) => document.querySelector(id))
+        .filter(Boolean)
+
+    const closeMobileMenu = () => {
+        if (!menuToggle || !mobileMenu) return
+        menuToggle.classList.remove('is-open')
+        mobileMenu.classList.remove('is-open')
+        menuToggle.setAttribute('aria-expanded', 'false')
+        document.body.style.overflow = ''
+    }
+
+    const openMobileMenu = () => {
+        if (!menuToggle || !mobileMenu) return
+        menuToggle.classList.add('is-open')
+        mobileMenu.classList.add('is-open')
+        menuToggle.setAttribute('aria-expanded', 'true')
+        document.body.style.overflow = 'hidden'
+    }
+
+    const setActiveLink = (activeId) => {
+        menuLinks.forEach((link) => {
+            const isActive = link.getAttribute('href') === activeId
+            link.classList.toggle('is-active', isActive)
+        })
+    }
+
+    const updateActiveLinkOnScroll = () => {
+        if (sections.length === 0) return
+        const viewportCenter = window.innerHeight * 0.4
+        let activeSection = sections[0]
+
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect()
+            if (rect.top <= viewportCenter) {
+                activeSection = section
+            }
+        })
+
+        setActiveLink(`#${activeSection.id}`)
+    }
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('is-open')
+            if (isOpen) {
+                closeMobileMenu()
+            } else {
+                openMobileMenu()
+            }
+        })
+    }
+
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const targetId = link.getAttribute('href')
+            if (!targetId || !targetId.startsWith('#')) return
+            const targetElement = document.querySelector(targetId)
+            if (!targetElement) return
+
+            event.preventDefault()
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+
+            setActiveLink(targetId)
+            closeMobileMenu()
+        })
+    })
+
+    updateActiveLinkOnScroll()
+    window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true })
+    window.addEventListener('resize', updateActiveLinkOnScroll)
+}
+
 // Initialisation des composants
 document.addEventListener('DOMContentLoaded', () => {
     // ... existant ...
 
     // Initialiser le scroll fluide
     initScrollAnchor()
+    initSiteNavigation()
 
     // Initialiser le shader dans le header
     const headerElement = document.getElementById('header-shader')

@@ -11,6 +11,28 @@
     <link rel="stylesheet" href="/artpulse.css">
   </head>
   <body>
+    <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu-overlay" aria-label="Ouvrir le menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="side-nav" aria-label="Navigation principale">
+      <a href="#projets" class="side-nav-link">Projets</a>
+      <a href="#partenaires" class="side-nav-link">Partenaires</a>
+      <a href="#equipe" class="side-nav-link">Equipe</a>
+      <a href="#soutenir" class="side-nav-link">Nous soutenir</a>
+      <a href="#contact" class="side-nav-link">Contact</a>
+    </nav>
+
+    <nav class="mobile-menu-overlay" id="mobile-menu-overlay" aria-label="Navigation mobile">
+      <a href="#projets" class="mobile-menu-link">Projets</a>
+      <a href="#partenaires" class="mobile-menu-link">Partenaires</a>
+      <a href="#equipe" class="mobile-menu-link">Equipe</a>
+      <a href="#soutenir" class="mobile-menu-link">Nous soutenir</a>
+      <a href="#contact" class="mobile-menu-link">Contact</a>
+    </nav>
+
     <!-- Header avec shader -->
     <header class="header" id="header-shader">
       <div class="header-content">
@@ -41,7 +63,7 @@
     </section>
 
     <!-- Section Projects -->
-    <section class="projects">
+    <section class="projects" id="projets">
       <div class="grid-container">
         <h2 class="section-title">Projets</h2>
         <!-- Barre de progression avec dates -->
@@ -81,7 +103,7 @@
       </div>
     </section>
         <!-- Comité de soutien -->
-        <section class="support-committee">
+        <section class="support-committee" id="partenaires">
           <div class="grid-container">
             <h2 class="section-title">Partenaires</h2>
     
@@ -175,7 +197,7 @@
         </section>
 
     <!-- Section Équipe -->
-    <section class="team">
+    <section class="team" id="equipe">
       <div class="grid-container">
         <h2 class="section-title">ÉQUIPE</h2>
         <div class="team-content">
@@ -261,7 +283,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="grid-container">
         <h2 class="section-title">CONTACT</h2>
         <div class="contact-grid">
