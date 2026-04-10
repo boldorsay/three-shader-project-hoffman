@@ -1110,6 +1110,34 @@ class TeamManager {
 }
 
 // Gestion du scroll fluide pour le bouton "Nous soutenir" de l'intro
+function initIntroTitleReveal() {
+    const title = document.getElementById('intro-title')
+    if (!title) return
+
+    const enable = () => {
+        title.classList.add('intro-title--revealed')
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        enable()
+        return
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    enable()
+                    observer.disconnect()
+                }
+            })
+        },
+        { root: null, threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
+    )
+
+    observer.observe(title)
+}
+
 function initScrollAnchor() {
     const introBtn = document.querySelector('.intro-btn .support-btn')
     const targetSection = document.getElementById('soutenir')
@@ -1127,7 +1155,7 @@ function initScrollAnchor() {
 function initSiteNavigation() {
     const menuToggle = document.querySelector('.mobile-menu-toggle')
     const mobileMenu = document.getElementById('mobile-menu-overlay')
-    const menuLinks = document.querySelectorAll('.side-nav a, .mobile-menu-overlay a')
+    const menuLinks = document.querySelectorAll('.mobile-menu-overlay a')
     const sectionIds = Array.from(new Set(
         Array.from(menuLinks)
             .map((link) => link.getAttribute('href'))
@@ -1215,6 +1243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialiser le scroll fluide
     initScrollAnchor()
+    initIntroTitleReveal()
     initSiteNavigation()
 
     // Initialiser le shader dans le header

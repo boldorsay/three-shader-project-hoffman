@@ -41,7 +41,6 @@ body {
     background: var(--bg-color);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-left: 40px;
 }
 
 html {
@@ -58,51 +57,9 @@ a {
     color: #000;
 }
 
-/* Navigation latérale desktop (40px) */
-.side-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 100vh;
-    background: #fff;
-    border-right: 1.5px solid #000000;
-    z-index: 1200;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    padding: 8px 0;
-}
-
-.side-nav-link {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-family: 'Inter', sans-serif;
-    font-size: 11.6px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-.side-nav-link:hover {
-    opacity: 1;
-}
-
-.side-nav-link.is-active {
-    opacity: 1;
-    text-decoration-line: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 4px;
-    text-decoration-color: #000;
-}
-
-/* Menu burger mobile */
+/* Menu burger (toujours visible) + overlay plein écran */
 .mobile-menu-toggle {
-    display: none;
+    display: block;
     position: fixed;
     top: 16px;
     right: 16px;
@@ -312,6 +269,39 @@ a {
     margin-bottom: 40px;
     grid-column: 1 / 7;
     /* 5 colonnes (1, 2, 3, 4, 5) de la grille principale */
+}
+
+.intro-title-line {
+    display: block;
+    overflow: hidden;
+}
+
+.intro-title-line + .intro-title-line {
+    margin-top: 0.06em;
+}
+
+.intro-title-line-inner {
+    display: block;
+    transform: translate3d(0, 108%, 0);
+    will-change: transform;
+    transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.intro-title.intro-title--revealed .intro-title-line:nth-child(1) .intro-title-line-inner {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.05s;
+}
+
+.intro-title.intro-title--revealed .intro-title-line:nth-child(2) .intro-title-line-inner {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.22s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-title-line-inner {
+        transform: none;
+        transition: none;
+    }
 }
 
 .intro-text {
@@ -1080,18 +1070,6 @@ a {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-left: 0;
-    }
-
-    .side-nav {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-
     :root {
         --grid-columns: 4;
     }
